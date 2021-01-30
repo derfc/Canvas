@@ -41,6 +41,16 @@
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
         >Draw Line</span
       > 
+      <!-- The drawing arc button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-arc">Draw Arc</span>
+    <!-- The drawing bezier curve button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-bezier-curve">Draw bezier-curve</span>
+    <!-- The eraser button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="eraser">Eraser</span>
+    <!-- The color button  -->
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="blue">Blue</span>
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="black">Black</span>
       <!-- jQuery -->
       <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -69,6 +79,11 @@
       async
       defer
     ></script>
+    <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
+    <!-- The drawing bezier curve functionality  -->
+    <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+    <!-- The eraser functionality  -->
+    <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
     $(()=>{
       currentFunction =  new DrawingLine(contextReal)
@@ -78,6 +93,15 @@
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
       });  
+      $("#drawing-arc").click(() => {
+        currentFunction = new DrawingArc(contextReal, contextDraft);
+      });
+      $("#drawing-bezier-curve").click(() => {
+        currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
+      });
+      $("#eraser").click(() => {
+        currentFunction = new Eraser(contextReal);
+      });
     })
     </script>
   </body>
