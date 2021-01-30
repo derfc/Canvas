@@ -41,12 +41,27 @@
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
         >Draw Line</span
       > 
-      <!-- Color Selector -->
+      <!-- UTILITIES -->
+      <!-- Clear All -->
+      <span class="btn btn-danger fa fa-paint-brush" id="clear-canvas"
+      >Clear Canvas</span
+    > 
+      <!-- Stroke Size -->
+      <label for="stroke-size">Stroke Size</label>
+      <select id="stroke-size">
+        <option value="1">Ultrafine</option>
+        <option value="3">Fine</option>
+        <option value="5" selected>Normal</option>
+        <option value="7">Bold</option>
+        <option value="9">Bolder</option>
+        <option value="15">Superbold</option>
+      </select>
+      <!-- Color Selectors -->
       <label for="strokecolor">Stroke Color: </label>
-      <input type="color" id="strokecolor" name="strokecolor" value="#ff1">
+      <input type="color" id="stroke-color" name="strokecolor" value="#ffff00">
 
       <label for="fillcolor">Fill Color: </label>
-      <input type="color" id="fillcolor" name="fillcolor" value="#00ffff">
+      <input type="color" id="fill-color" name="fillcolor" value="#00ffff">
       <!-- jQuery -->
       <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -60,7 +75,13 @@
       async
       defer
     ></script>
-
+    <!-- Canvas Utilities -->
+    <script
+    src="./javascript/utilities.js"
+    type="text/javascript"
+    async
+    defer
+  ></script>
     <!-- The drawing line functionality  -->
     <script
       src="./javascript/drawing-line.js"
