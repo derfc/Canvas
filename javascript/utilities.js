@@ -3,7 +3,7 @@
 let canvasSettings = {
   colorStroke: $("#stroke-color").val(),
   colorFill: $("#fill-color").val(),
-  // strokeSize
+  strokeSize: $("#stroke-size").val(),
   // textSize
   // textFont
 };
