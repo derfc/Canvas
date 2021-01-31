@@ -76,7 +76,7 @@ class DrawingRectangle extends PaintFunction {
     this.contextReal.lineWidth = canvasSettings.strokeSize;
     this.contextReal.fillStyle = canvasSettings.colorFill;
     this.contextReal.strokeStyle = canvasSettings.colorStroke;
-    this.contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     if (regularFix) {
       let xDiv = coord[0] - this.origX;
       let yDiv = coord[1] - this.origY;
