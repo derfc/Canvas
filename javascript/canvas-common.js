@@ -9,6 +9,7 @@ let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
+let regularFix = false;
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
@@ -46,6 +47,38 @@ $("#canvas-draft").mouseenter(function (e) {
   currentFunction.onMouseEnter([mouseX, mouseY], e);
 });
 
+window.addEventListener("keydown", (e) => {
+  console.log(e.key);
+  if (e.key == "Escape") {
+    // contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    currentFunction.reset();
+  }
+  if (e.key == "Shift") {
+    regularFix = true;
+    console.log("regular fix", regularFix);
+  }
+});
+
+window.addEventListener("keyup", (e) => {
+  console.log(e.key);
+  if (e.key == "Shift") {
+    regularFix = false;
+    console.log("regular fix", regularFix);
+  }
+});
+
+// window.addEventListener("keypress", (e) => {
+//   console.log(e.key);
+//   if (e.key == "Escape") {
+//     // contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+//     currentFunction.reset();
+//   }
+// });
+
+// $(".ch-color").click((e) => {
+//   console.log(e.target.id);
+//   var colorStroke = e.target.id;
+// });
 /** # Class (all classes will have these methods) #
 /*  ====================== */
 class PaintFunction {
@@ -56,4 +89,5 @@ class PaintFunction {
   onMouseUp() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  color() {}
 }

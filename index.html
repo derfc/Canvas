@@ -41,11 +41,20 @@
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
         >Draw Line</span
       > 
+      <!-- The drawing arc button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-arc">Draw Arc</span>
+    <!-- The drawing bezier curve button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-bezier-curve">Draw bezier-curve</span>
+    <!-- The eraser button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="eraser">Eraser</span>
+    <!-- The color button  -->
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="blue">Blue</span>
+    <span class="btn btn-info fa fa-paint-brush ch-color" id="black">Black</span>
       <!-- UTILITIES -->
       <!-- Clear All -->
       <span class="btn btn-danger fa fa-paint-brush" id="clear-canvas"
-      >Clear Canvas</span
-    > 
+      >Clear Canvas</span> 
       <!-- Stroke Size -->
       <label for="stroke-size">Stroke Size</label>
       <select id="stroke-size">
@@ -96,15 +105,29 @@
       async
       defer
     ></script>
+    <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
+    <!-- The drawing bezier curve functionality  -->
+    <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+    <!-- The eraser functionality  -->
+    <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
     $(()=>{
-      currentFunction =  new DrawingLine(contextReal)
+        currentFunction =  new DrawingRectangle(contextReal, contextDraft);
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
       });
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
       });  
+      $("#drawing-arc").click(() => {
+        currentFunction = new DrawingArc(contextReal, contextDraft);
+      });
+      $("#drawing-bezier-curve").click(() => {
+        currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
+      });
+      $("#eraser").click(() => {
+        currentFunction = new Eraser(contextReal);
+      });
     })
     </script>
   </body>
