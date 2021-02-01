@@ -23,13 +23,13 @@
         id="canvas-real"
         class="canvas"
         width="1280px"
-        height="400px"
+        height="500px"
       ></canvas>
       <canvas
         id="canvas-draft"
         class="canvas"
         width="1280px"
-        height="400px"
+        height="500px"
       ></canvas>
       <input id="textInput" name="inputField" value="" style="display: none"></input>
     </div>
@@ -37,6 +37,10 @@
       <!-- The drawing rectangle button  -->
       <span class="btn btn-primary fa fa-square" id="drawing-rectangle"
         >Draw Rectangle</span
+      >
+      <!-- The drawing circle button  -->
+      <span class="btn btn-primary fa fa-square" id="drawing-circle"
+        >Draw circle</span
       >
       <!-- The drawing line button  -->
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
@@ -110,6 +114,13 @@
       async
       defer
     ></script>
+    <!-- The drawing circle functionality  -->
+    <script
+      src="./javascript/drawing-circle.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
     <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
     <!-- The drawing bezier curve functionality  -->
     <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
@@ -122,6 +133,9 @@
         currentFunction =  new DrawingRectangle(contextReal, contextDraft);
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#drawing-circle").click(() => {
+        currentFunction = new DrawingCircle(contextReal, contextDraft);
       });
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
