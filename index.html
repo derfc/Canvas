@@ -27,7 +27,6 @@
         <!-- <div class="buttons"> -->
         <div class="mainbutton">
           <!-- The drawing rectangle button  -->
-          <!-- <span class="btn btn-primary" id="drawing-rectangle">Rectangle</span> -->
           <div class="button" id="btn-drawing-rectangle">
             <img
               class="img-fluid icons"
@@ -37,7 +36,6 @@
             />
           </div>
           <!-- The drawing line button  -->
-          <!-- <span class="btn btn-info" id="drawing-line">Pencil</span> -->
           <div class="button" id="btn-drawing-line">
             <img
               class="img-fluid icons"
@@ -47,7 +45,6 @@
             />
           </div>
           <!-- The drawing arc button  -->
-          <!-- <span class="btn btn-info" id="drawing-arc">Arc</span> -->
           <div class="button" id="btn-drawing-arc">
             <img
               class="img-fluid icons"
@@ -57,33 +54,43 @@
             />
           </div>
           <!-- The drawing bezier curve button  -->
-          <!-- <span class="btn btn-info" id="drawing-bezier-curve">B-Curve</span> -->
           <div class="button" id="btn-drawing-bezier">
             <img
               class="img-fluid icons"
               src="img/canvasicons-bezier.png"
-              alt="arc"
+              alt="bezier-curve"
               id="drawing-bezier-curve"
             />
           </div>
+          <!-- The drawing circle button  -->
+          <!-- <span class="btn btn-primary" id="drawing-circle">Draw circle</span> -->
+          <div class="button" id="btn-drawing-circle">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-circle.png"
+              alt="cicle"
+              id="drawing-circle"
+            />
+          </div>
+          <!-- The Text button  -->
+          <!-- <span class="btn btn-info" id="text">Text</span> -->
+          <div class="button" id="btn-text">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-text.png"
+              alt="text"
+              id="text"
+            />
+          </div>
           <!-- The eraser button  -->
-          <!-- <span class="btn btn-info" id="eraser">Eraser</span> -->
           <div class="button" id="btn-eraser">
             <img
               class="img-fluid icons"
               src="img/canvasicons-eraser.png"
-              alt="arc"
+              alt="eraser"
               id="eraser"
             />
-            <!-- The drawing circle button  -->
-            <span class="btn btn-primary" id="drawing-circle">Draw circle</span>
-            <!-- The Text button  -->
-            <span class="btn btn-info" id="text">Text</span>
           </div>
-          <!-- The color button  -->
-          <!-- <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
-    <span class="btn btn-info fa fa-paint-brush ch-color" id="blue">Blue</span>
-    <span class="btn btn-info fa fa-paint-brush ch-color" id="black">Black</span> -->
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
@@ -91,7 +98,7 @@
             <img
               class="img-fluid icons"
               src="img/canvasicons-clear.png"
-              alt="arc"
+              alt="clear-canvas"
               id="clear-canvas"
             />
           </div>
@@ -137,6 +144,7 @@
           width="950px"
           height="550px"
         ></canvas>
+        <input id="textInput" name="inputField" value="" style="display: none"></input>
       </div>
     </div>
     <!-- jQuery -->
