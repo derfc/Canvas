@@ -23,13 +23,13 @@
         id="canvas-real"
         class="canvas"
         width="1280px"
-        height="720px"
+        height="500px"
       ></canvas>
       <canvas
         id="canvas-draft"
         class="canvas"
         width="1280px"
-        height="720px"
+        height="500px"
       ></canvas>
     </div>
     <div class="buttons">
@@ -128,6 +128,9 @@
         currentFunction =  new DrawingRectangle(contextReal, contextDraft);
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#drawing-circle").click(() => {
+        currentFunction = new DrawingCircle(contextReal, contextDraft);
       });
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
