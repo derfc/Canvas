@@ -34,6 +34,13 @@ $("#canvas-draft").mouseup(function (e) {
   currentFunction.onMouseUp([mouseX, mouseY], e);
 });
 
+$("#textInput").keypress(function (e) {
+  console.log("hi");
+  if(e.which == 13){
+  currentFunction.onKeyPress();
+  }
+});
+
 $("#canvas-draft").mouseleave(function (e) {
   dragging = false;
   let mouseX = e.offsetX;
@@ -89,5 +96,6 @@ class PaintFunction {
   onMouseUp() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  onKeyPress(){}
   color() {}
 }

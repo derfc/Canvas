@@ -13,7 +13,10 @@ class DrawingArc extends PaintFunction {
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
-    this.contextReal.strokeStyle = "#df4b26";
+    this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
+    this.contextReal.lineWidth = canvasSettings.strokeSize;
+    this.contextReal.strokeStyle = canvasSettings.colorStroke;
     // this.context.lineJoin = "round";
     // this.context.lineWidth = 5;
     // this.context.beginPath();
