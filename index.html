@@ -91,6 +91,15 @@
               id="eraser"
             />
           </div>
+          <!-- The str-line button  -->
+          <div class="button" id="btn-strline">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-eraser.png"
+              alt="strline"
+              id="strline"
+            />
+          </div>          
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
@@ -208,6 +217,13 @@
       async
       defer
     ></script>
+    <!-- str-line function -->
+    <script 
+      src="./javascript/str-line.js" 
+      type="text/javascript" 
+      async 
+      defer
+    ></script>
     <script
       src="./javascript/text.js"
       type="text/javascript"
@@ -237,6 +253,9 @@
         });
         $("#text").click(() => {
           currentFunction = new DrawingText(contextReal, contextDraft);
+        });
+        $("#strline").click(() => {
+          currentFunction = new DrawingStriaghtLine(contextReal, contextDraft);
         });
       });
     </script>
