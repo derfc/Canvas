@@ -1,136 +1,106 @@
-
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-   
-  </head>
-  <body class="container">
-    <h1>Canvas Application</h1>
-    <div id="canvas-container">
-      <canvas
-        id="canvas-real"
-        class="canvas"
-        width="1280px"
-        height="720px"
-      ></canvas>
-      <canvas
-        id="canvas-draft"
-        class="canvas"
-        width="1280px"
-        height="720px"
-      ></canvas>
-    </div>
-    <div class="buttons">
-      <!-- The drawing rectangle button  -->
-      <span class="btn btn-primary fa fa-square" id="drawing-rectangle"
-        >Draw Rectangle</span
-      >
-      <!-- The drawing line button  -->
-      <span class="btn btn-info fa fa-paint-brush" id="drawing-line"
-        >Draw Line</span
-      > 
-      <!-- The drawing arc button  -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+</head>
+
+<body class="container">
+  <h1>Canvas Application</h1>
+  <div id="canvas-container">
+    <canvas id="canvas-real" class="canvas" width="1280px" height="720px"></canvas>
+    <canvas id="canvas-draft" class="canvas" width="1280px" height="720px"></canvas>
+  </div>
+  <div class="buttons">
+    <!-- The drawing rectangle button  -->
+    <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Draw Rectangle</span>
+    <!-- The drawing line button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Draw Line</span>
+    <!-- The drawing arc button  -->
     <span class="btn btn-info fa fa-paint-brush" id="drawing-arc">Draw Arc</span>
     <!-- The drawing bezier curve button  -->
     <span class="btn btn-info fa fa-paint-brush" id="drawing-bezier-curve">Draw bezier-curve</span>
+    <!-- The drawing polygon button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="drawing-polygon">Draw polygon</span>
     <!-- The eraser button  -->
     <span class="btn btn-info fa fa-paint-brush" id="eraser">Eraser</span>
     <!-- The color button  -->
     <!-- <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
     <span class="btn btn-info fa fa-paint-brush ch-color" id="blue">Blue</span>
     <span class="btn btn-info fa fa-paint-brush ch-color" id="black">Black</span> -->
-      <!-- UTILITIES -->
-      <!-- Clear All -->
-      <span class="btn btn-danger fa fa-paint-brush" id="clear-canvas"
-      >Clear Canvas</span> 
-      <br>
-      <div style="margin-top: 30px;"></div>
-      <!-- Stroke Size -->
-      <label for="stroke-size">Stroke Size</label>
-      <select id="stroke-size">
-        <option value="1">Ultrafine</option>
-        <option value="3">Fine</option>
-        <option value="5" selected>Normal</option>
-        <option value="7">Bold</option>
-        <option value="9">Bolder</option>
-        <option value="15">Superbold</option>
-      </select>
-      <!-- Color Selectors -->
-      <label for="strokecolor">Stroke Color: </label>
-      <input type="color" id="stroke-color" name="strokecolor" value="#228c22">
+    <!-- UTILITIES -->
+    <!-- Clear All -->
+    <span class="btn btn-danger fa fa-paint-brush" id="clear-canvas">Clear Canvas</span>
+    <br>
+    <div style="margin-top: 30px;"></div>
+    <!-- Stroke Size -->
+    <label for="stroke-size">Stroke Size</label>
+    <select id="stroke-size">
+      <option value="1">Ultrafine</option>
+      <option value="3">Fine</option>
+      <option value="5" selected>Normal</option>
+      <option value="7">Bold</option>
+      <option value="9">Bolder</option>
+      <option value="15">Superbold</option>
+    </select>
+    <!-- Color Selectors -->
+    <label for="strokecolor">Stroke Color: </label>
+    <input type="color" id="stroke-color" name="strokecolor" value="#228c22">
 
-      <label for="fillcolor">Fill Color: </label>
-      <input type="color" id="fill-color" name="fillcolor" value="#00008B">
-      <!-- jQuery -->
-      <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
+    <label for="fillcolor">Fill Color: </label>
+    <input type="color" id="fill-color" name="fillcolor" value="#00008B">
+    <!-- Side Selector -->
+    <label for="polygonSides">Polygon Sides: </label>
+    <input type="nuber" id="polygon-sides" name="polygonSides" value="6">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- The drawing functionality  -->
-    <script
-      src="./javascript/canvas-common.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
+    <script src="./javascript/canvas-common.js" type="text/javascript" async defer></script>
     <!-- Canvas Utilities -->
-    <script
-    src="./javascript/utilities.js"
-    type="text/javascript"
-    async
-    defer
-  ></script>
+    <script src="./javascript/utilities.js" type="text/javascript" async defer></script>
     <!-- The drawing line functionality  -->
-    <script
-      src="./javascript/drawing-line.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
+    <script src="./javascript/drawing-line.js" type="text/javascript" async defer></script>
     <!-- The drawing rectangle functionality  -->
-    <script
-      src="./javascript/drawing-rectangle.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
+    <script src="./javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
     <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
     <!-- The drawing bezier curve functionality  -->
     <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+    <!-- The drawing polygon functionality  -->
+    <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
     <!-- The eraser functionality  -->
     <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-    $(()=>{
-        currentFunction =  new DrawingRectangle(contextReal, contextDraft);
-      $("#drawing-rectangle").click(() => {
+      $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
-      });
-      $("#drawing-line").click(() => {
-        currentFunction = new DrawingLine(contextReal);
-      });  
-      $("#drawing-arc").click(() => {
-        currentFunction = new DrawingArc(contextReal, contextDraft);
-      });
-      $("#drawing-bezier-curve").click(() => {
-        currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
-      });
-      $("#eraser").click(() => {
-        currentFunction = new Eraser(contextReal);
-      });
-    })
+        $("#drawing-rectangle").click(() => {
+          currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $("#drawing-line").click(() => {
+          currentFunction = new DrawingLine(contextReal);
+        });
+        $("#drawing-arc").click(() => {
+          currentFunction = new DrawingArc(contextReal, contextDraft);
+        });
+        $("#drawing-bezier-curve").click(() => {
+          currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
+        });
+        $("#drawing-polygon").click(() => {
+          currentFunction = new DrawingPolygon(contextReal, contextDraft);
+        });
+        $("#eraser").click(() => {
+          currentFunction = new Eraser(contextReal);
+        });
+      })
     </script>
-  </body>
+</body>
+
 </html>
