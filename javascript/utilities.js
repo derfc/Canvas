@@ -1,20 +1,15 @@
 "use strict";
 // COLOR, TEXT SIZE & STROKESIZE
 let canvasSettings = {
-<<<<<<< HEAD
 	colorStroke: $("#stroke-color").val(),
 	colorFill: $("#fill-color").val(),
 	polygonSize: $("#polygon-sides").val(),
 	// strokeSize
 	// textSize
 	// textFont
-=======
-  colorStroke: $("#stroke-color").val(),
-  colorFill: $("#fill-color").val(),
-  strokeSize: $("#stroke-size").val(),
-  // textSize
-  // textFont
->>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6
+	strokeSize: $("#stroke-size").val(),
+	// textSize
+	// textFont
 };
 
 $("#stroke-color")[0].oninput = function () {
@@ -37,10 +32,6 @@ $("#polygon-sides")[0].oninput = function () {
 // };
 
 $("#clear-canvas").click(() => {
-<<<<<<< HEAD
 	contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-=======
-  contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-  contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
->>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6
+	contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 });
