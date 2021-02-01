@@ -23,25 +23,28 @@ body {
 }
 
 .mainbutton {
-  background-color: rgba(77, 77, 64, 0.466);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 30px;
-  column-gap: 1em;
-  row-gap: 2em;
-  padding: 20px 10px;
-  width: 300px;
+  grid-template-columns: auto auto;
+  /* grid-auto-rows: 30px; */
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  padding: 10px 10px;
+  /* width: 300px; */
+  justify-content: center;
 }
 
 .utility-button {
+  font-size: 10px;
+  font-weight: 700;
   background-color: rgba(207, 207, 23, 0.466);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 30px;
+  grid-template-columns: auto;
+  /* grid-auto-rows: 30px; */
   column-gap: 1em;
-  row-gap: 2em;
-  padding: 20px 10px;
-  width: 300px;
+  row-gap: 0.5em;
+  padding: 10px 10px;
+  /* width: 250px; */
+  justify-content: center;
 }
 
 .buttonAll {
@@ -51,7 +54,7 @@ body {
 }
 
 .icons {
-  width: 60px;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -60,4 +63,8 @@ body {
   justify-content: flex-start;
   margin: 0px;
   padding: 0px;
+}
+
+.button {
+  /* background-color: goldenrod; */
 }
