@@ -26,4 +26,5 @@ $("#stroke-size")[0].oninput = function () {
 
 $("#clear-canvas").click(() => {
   contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+  contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 });

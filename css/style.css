@@ -1,10 +1,15 @@
 .canvas {
   border: 1px black dotted;
   position: absolute;
+  /*
   top: 0px;
   bottom: 0px;
-  left: 0px;
-  right: 0px;
+  left: 200px;
+  right: 0px; */
+}
+
+#canvas-real {
+  background-color: #f5f3de;
 }
 
 #canvas-draft {
@@ -15,4 +20,44 @@ body {
 }
 #canvas-container {
   height: 720px;
+}
+
+.mainbutton {
+  background-color: rgba(77, 77, 64, 0.466);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 30px;
+  column-gap: 1em;
+  row-gap: 2em;
+  padding: 20px 10px;
+  width: 300px;
+}
+
+.utility-button {
+  background-color: rgba(207, 207, 23, 0.466);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 30px;
+  column-gap: 1em;
+  row-gap: 2em;
+  padding: 20px 10px;
+  width: 300px;
+}
+
+.buttonAll {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+}
+
+.icons {
+  width: 60px;
+  cursor: pointer;
+}
+
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  padding: 0px;
 }
