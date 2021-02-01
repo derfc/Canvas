@@ -23,14 +23,15 @@
         id="canvas-real"
         class="canvas"
         width="1280px"
-        height="720px"
+        height="400px"
       ></canvas>
       <canvas
         id="canvas-draft"
         class="canvas"
         width="1280px"
-        height="720px"
+        height="400px"
       ></canvas>
+      <input id="textInput" name="inputField" value="" style="display: none"></input>
     </div>
     <div class="buttons">
       <!-- The drawing rectangle button  -->
@@ -47,6 +48,8 @@
     <span class="btn btn-info fa fa-paint-brush" id="drawing-bezier-curve">Draw bezier-curve</span>
     <!-- The eraser button  -->
     <span class="btn btn-info fa fa-paint-brush" id="eraser">Eraser</span>
+    <!-- The Text button  -->
+    <span class="btn btn-info fa fa-paint-brush" id="text">Text</span>
     <!-- The color button  -->
     <!-- <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
     <span class="btn btn-info fa fa-paint-brush ch-color" id="blue">Blue</span>
@@ -112,6 +115,8 @@
     <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
     <!-- The eraser functionality  -->
     <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
+    <!-- Test function -->
+    <script src="./javascript/text.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
     $(()=>{
         currentFunction =  new DrawingRectangle(contextReal, contextDraft);
@@ -129,6 +134,9 @@
       });
       $("#eraser").click(() => {
         currentFunction = new Eraser(contextReal);
+      });
+      $("#text").click(() => {
+        currentFunction = new DrawingText(contextReal, contextDraft);
       });
     })
     </script>
