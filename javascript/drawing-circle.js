@@ -37,7 +37,7 @@ class DrawingCircle extends PaintFunction {
     // this.contextDraft.fill();
 
     // looks at the fill / unfill checkbox to see if checked or not by using prop() method
-    // if checked, will invoke the this.contextDradt.fill method
+    // if checked, will invoke the this.contextDraft.fill method
     this.isFillRequired = $("#togglefill").prop("checked");
     if (this.isFillRequired) {
       this.contextDraft.fill();
