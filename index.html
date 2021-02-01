@@ -75,6 +75,10 @@
               alt="arc"
               id="eraser"
             />
+            <!-- The drawing circle button  -->
+            <span class="btn btn-primary" id="drawing-circle">Draw circle</span>
+            <!-- The Text button  -->
+            <span class="btn btn-info" id="text">Text</span>
           </div>
           <!-- The color button  -->
           <!-- <span class="btn btn-info fa fa-paint-brush ch-color" id="red">Red</span>
@@ -189,6 +193,19 @@
       async
       defer
     ></script>
+    <!-- The drawing circle functionality  -->
+    <script
+      src="./javascript/drawing-circle.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <script
+      src="./javascript/text.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
     <script type="text/javascript">
       $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -206,6 +223,12 @@
         });
         $("#eraser").click(() => {
           currentFunction = new Eraser(contextReal);
+        });
+        $("#drawing-circle").click(() => {
+          currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+        $("#text").click(() => {
+          currentFunction = new DrawingText(contextReal, contextDraft);
         });
       });
     </script>

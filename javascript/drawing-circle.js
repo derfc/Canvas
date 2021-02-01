@@ -19,13 +19,13 @@ class DrawingCircle extends PaintFunction {
   onDragging(coord, event) {
     // Manipulating the context draft circle via mouse dragging
     // Fill in the color
-    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); // clears the canvas first
-    this.contextDraft.strokeStyle = "#f44"; //Sets the style for shapes' outlines.  i.e. empty shape
+    // this.contextDraft.strokeStyle = "#f44"; //Sets the style for shapes' outlines.  i.e. empty shape
     // Kind of line
+    this.contextDraft.fillStyle = "#f44"; //Sets the style used when filling shapes.
     this.contextDraft.lineJoin = "round"; //determines the shape used to join two line segments where they meet.  ctx.lineJoin = "bevel" || "round" || "miter"
     // Width of line
     this.contextDraft.lineWidth = 5;
-    this.contextDraft.fillStyle = "#f44"; //Sets the style used when filling shapes.
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); // clears the canvas first
 
     // Allows you to actually draw out your squares
     // Drawing the draft circle here
@@ -38,7 +38,7 @@ class DrawingCircle extends PaintFunction {
 
   onMouseMove() {}
   onMouseUp(coord) {
-    // Clearing the rectangle first
+    // Clearing the draft rectangle first
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
