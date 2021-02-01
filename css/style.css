@@ -28,7 +28,7 @@ body {
 	/* grid-auto-rows: 30px; */
 	column-gap: 0.5em;
 	row-gap: 0.5em;
-	padding: 10px 10px;
+	padding: 10px 20px;
 	/* width: 300px; */
 	justify-content: center;
 }
@@ -56,6 +56,9 @@ body {
 .icons {
 	width: 50px;
 	cursor: pointer;
+	border: 2px solid grey;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
 }
 
 .contain {
@@ -63,8 +66,4 @@ body {
 	justify-content: flex-start;
 	margin: 0px;
 	padding: 0px;
-}
-
-.button {
-	/* background-color: goldenrod; */
 }
