@@ -1,10 +1,22 @@
 .canvas {
   border: 1px black dotted;
   position: absolute;
+<<<<<<< HEAD
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+=======
+  /*
+  top: 0px;
+  bottom: 0px;
+  left: 200px;
+  right: 0px; */
+}
+
+#canvas-real {
+  background-color: #f5f3de;
+>>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6
 }
 
 #canvas-draft {
@@ -16,3 +28,53 @@ body {
 #canvas-container {
   height: 720px;
 }
+<<<<<<< HEAD
+=======
+
+.mainbutton {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* grid-auto-rows: 30px; */
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  padding: 10px 10px;
+  /* width: 300px; */
+  justify-content: center;
+}
+
+.utility-button {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(207, 207, 23, 0.466);
+  display: grid;
+  grid-template-columns: auto;
+  /* grid-auto-rows: 30px; */
+  column-gap: 1em;
+  row-gap: 0.5em;
+  padding: 10px 10px;
+  /* width: 250px; */
+  justify-content: center;
+}
+
+.buttonAll {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+}
+
+.icons {
+  width: 50px;
+  cursor: pointer;
+}
+
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  padding: 0px;
+}
+
+.button {
+  /* background-color: goldenrod; */
+}
+>>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6

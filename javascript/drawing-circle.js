@@ -11,12 +11,15 @@ class DrawingCircle extends PaintFunction {
   // the draft is the preview of what the shape looks like.
   // the real is when the mouse is released and the final shape is committed to the canvas
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44";
+    this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    this.contextDraft.fillStyle = canvasSettings.colorFill;
+    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
     this.origX = coord[0];
     this.origY = coord[1];
   }
 
   onDragging(coord, event) {
+<<<<<<< HEAD
     // Manipulating the context draft circle via mouse dragging
     // Fill in the color
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); // clears the canvas first
@@ -26,6 +29,14 @@ class DrawingCircle extends PaintFunction {
     // Width of line
     this.contextDraft.lineWidth = 5;
     this.contextDraft.fillStyle = "#f44"; //Sets the style used when filling shapes.
+=======
+    this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    this.contextDraft.fillStyle = canvasSettings.colorFill;
+    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
+    this.contextDraft.lineJoin = "round"; //determines the shape used to join two line segments where they meet.  ctx.lineJoin = "bevel" || "round" || "miter"
+    // Width of line
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height); // clears the canvas first
+>>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6
 
     // Allows you to actually draw out your squares
     // Drawing the draft circle here
@@ -42,12 +53,12 @@ class DrawingCircle extends PaintFunction {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
-    this.contextReal.strokeStyle = "#f44";
+    this.contextReal.lineWidth = canvasSettings.strokeSize;
+    this.contextReal.fillStyle = canvasSettings.colorFill;
+    this.contextReal.strokeStyle = canvasSettings.colorStroke;
     // Kind of line
     this.contextReal.lineJoin = "round";
     // Width of line
-    this.contextReal.lineWidth = 5;
-    this.contextReal.fillStyle = "#f44";
     let radius = coord[0] - this.origX;
     this.contextReal.beginPath();
     this.contextReal.arc(coord[0], coord[1], radius, 0, 2 * Math.PI, false);

@@ -10,6 +10,7 @@ class DrawingRectangle extends PaintFunction {
 		this.contextDraft = contextDraft;
 	}
 
+<<<<<<< HEAD
 	onMouseDown(coord, event) {
 		this.origX = coord[0];
 		this.origY = coord[1];
@@ -19,6 +20,17 @@ class DrawingRectangle extends PaintFunction {
 		this.contextDraft.fillStyle = canvasSettings.colorFill;
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+=======
+  onMouseDown(coord, event) {
+    this.origX = coord[0];
+    this.origY = coord[1];
+  }
+  onDragging(coord, event) {
+    this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    this.contextDraft.fillStyle = canvasSettings.colorFill;
+    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+>>>>>>> 71c57450cd7ea525ec0c94563fd98a21349e7ef6
 
 		if (regularFix) {
 			let xDiv = coord[0] - this.origX;
