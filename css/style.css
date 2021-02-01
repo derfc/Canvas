@@ -25,40 +25,54 @@ body {
 .mainbutton {
   display: grid;
   grid-template-columns: auto auto;
+  column-gap: 1em;
+  row-gap: 1em;
   /* grid-auto-rows: 30px; */
-  column-gap: 0.5em;
-  row-gap: 0.5em;
-  padding: 10px 20px;
-  /* width: 300px; */
+  background-color: #302f51;
+  /* background-color: #7510f7; */
   justify-content: center;
+  border-radius: 15px;
+  margin-left: 20px;
+  padding: 1.5em 1em;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
 }
 
 .utility-button {
-  font-size: 10px;
-  font-weight: 700;
-  background-color: rgba(207, 207, 23, 0.466);
   display: grid;
   grid-template-columns: auto;
-  /* grid-auto-rows: 30px; */
   column-gap: 1em;
   row-gap: 0.5em;
-  padding: 10px 10px;
-  /* width: 250px; */
   justify-content: center;
+  /* border: 1px black solid; */
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px 10px;
+  font-size: 10px;
+  font-weight: 800;
+  background-color: rgba(253, 253, 176, 0.651);
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+  /* width: 250px; */
 }
 
 .buttonAll {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  background-color: white;
 }
 
-.icons {
+.mainbutton .icons {
   width: 50px;
   cursor: pointer;
-  border: 2px solid grey;
   border-radius: 5px;
-  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+  box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
+  background-color: white;
+  /* border: #7510f7 3px solid; */
+}
+
+.active {
+  border: #7510f7 3px solid;
+  border-radius: 5px;
 }
 
 .contain {
