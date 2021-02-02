@@ -31,7 +31,8 @@ $("#clear-canvas").click(() => {
 
 ////////////DOM
 $(".icons").click(function (e) {
-  console.log(e);
+  // console.log(e);
   console.log(this);
-  this.classList.remove("active");
+  $(".icons").removeClass("btn-active");
+  $(this).addClass("btn-active");
 });
