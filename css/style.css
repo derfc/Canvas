@@ -71,8 +71,7 @@ body {
 }
 
 .active {
-  border: #7510f7 3px solid;
-  border-radius: 5px;
+  box-shadow: inset 0px 0px 0px 3px #7510f7;
 }
 
 .contain {
