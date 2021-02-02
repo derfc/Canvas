@@ -83,6 +83,7 @@
           <!-- The Text button  -->
           <!-- <span class="btn btn-info" id="text">Text</span> -->
           <div class="button" id="btn-text">
+            <!-- <input type="range" min="10" max="99" value="49" step="1" id="text-size"> -->
             <img
               class="img-fluid icons"
               src="img/canvasicons-text.png"
@@ -98,7 +99,8 @@
               alt="eraser"
               id="eraser"
             />
-          </div>      
+          </div>     
+          
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
@@ -121,6 +123,16 @@
             <option value="7">Bold</option>
             <option value="9">Bolder</option>
             <option value="15">Superbold</option>
+          </select>
+          <!-- Text Size -->
+          <label for="text-size">Text Size</label>
+          <select id="text-size">
+            <option value="18">Small</option>
+            <option value="30" selected>Normal</option>
+            <option value="50">Large</option>
+            <!-- <option value="7">Bold</option>
+            <option value="9">Bolder</option>
+            <option value="15">Superbold</option> -->
           </select>
           <!-- Color Selectors -->
           <label for="strokecolor">Stroke Color: </label>

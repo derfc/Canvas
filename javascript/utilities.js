@@ -4,6 +4,7 @@ let canvasSettings = {
   colorStroke: $("#stroke-color").val(),
   colorFill: $("#fill-color").val(),
   strokeSize: $("#stroke-size").val(),
+  textSize: $("#text-size").val(),
   // textSize
   // textFont
 };
@@ -18,6 +19,9 @@ $("#fill-color")[0].oninput = function () {
 
 $("#stroke-size")[0].oninput = function () {
   canvasSettings.strokeSize = this.value;
+};
+$("#text-size")[0].oninput = function () {
+  canvasSettings.textSize = this.value;
 };
 
 // $("#text-size")[0].oninput = function () {

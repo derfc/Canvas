@@ -33,6 +33,8 @@ class DrawingCircle extends PaintFunction {
     this.contextDraft.beginPath();
     this.contextDraft.arc(coord[0], coord[1], radius, 0, 2 * Math.PI, false);
     this.contextDraft.stroke();
+    this.contextDraft.fill();
+
   }
 
   onMouseMove() {}
@@ -51,6 +53,8 @@ class DrawingCircle extends PaintFunction {
     this.contextReal.beginPath();
     this.contextReal.arc(coord[0], coord[1], radius, 0, 2 * Math.PI, false);
     this.contextReal.stroke();
+    this.contextReal.fill();
+
   }
   onMouseLeave() {}
   onMouseEnter() {}
