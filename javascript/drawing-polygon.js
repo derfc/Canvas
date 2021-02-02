@@ -65,8 +65,11 @@ class DrawingPolygon extends PaintFunction {
 			);
 		}
 		// console.log("origional", this.origX, this.origY);
-
-		this.contextDraft.stroke();
+		if (fillStyle) {
+			this.contextDraft.fill();
+		} else {
+			this.contextDraft.stroke();
+		}
 	}
 
 	onMouseMove(coord, event) {}
@@ -105,7 +108,11 @@ class DrawingPolygon extends PaintFunction {
 		}
 		// console.log("origional", this.origX, this.origY);
 
-		this.contextReal.stroke();
+		if (fillStyle) {
+			this.contextReal.fill();
+		} else {
+			this.contextReal.stroke();
+		}
 		saveState();
 	}
 	onMouseLeave() {}

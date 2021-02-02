@@ -86,6 +86,17 @@ class DrawingText extends PaintFunction {
 	onMouseMove() {}
 	onMouseLeave() {}
 	onMouseEnter() {}
+	reset() {
+		this.clicclickNumberk = 0;
+		$("#textInput").css({
+			display: "none",
+			transform:
+				"translateY(" + this.origY + "px)translateX(" + this.origX + "px)",
+			padding: "0",
+		});
+		textInput.value = "";
+		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+	}
 }
 
 let test1 = { test: "test1" };

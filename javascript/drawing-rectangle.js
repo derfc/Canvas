@@ -26,46 +26,115 @@ class DrawingRectangle extends PaintFunction {
 
 			if (coord[0] > this.origX && coord[1] > this.origY) {
 				if (xDiv > yDiv) {
-					this.contextDraft.fillRect(this.origX, this.origY, yDiv, yDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, yDiv, yDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, yDiv, yDiv);
+						this.contextDraft.stroke();
+					}
 				} else {
-					this.contextDraft.fillRect(this.origX, this.origY, xDiv, xDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, xDiv, xDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, xDiv, xDiv);
+						this.contextDraft.stroke();
+					}
 				}
 			} else if (coord[0] > this.origX && coord[1] < this.origY) {
 				if (xDiv > Math.abs(yDiv)) {
-					this.contextDraft.fillRect(
-						this.origX,
-						this.origY,
-						Math.abs(yDiv),
-						yDiv
-					);
+					if (fillStyle) {
+						this.contextDraft.fillRect(
+							this.origX,
+							this.origY,
+							Math.abs(yDiv),
+							yDiv
+						);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(
+							this.origX,
+							this.origY,
+							Math.abs(yDiv),
+							yDiv
+						);
+						this.contextDraft.stroke();
+					}
 				} else {
-					this.contextDraft.fillRect(this.origX, this.origY, xDiv, -xDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, xDiv, -xDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, xDiv, -xDiv);
+						this.contextDraft.stroke();
+					}
 				}
 			} else if (coord[0] < this.origX && coord[1] > this.origY) {
 				if (Math.abs(xDiv) > yDiv) {
-					this.contextDraft.fillRect(this.origX, this.origY, -yDiv, yDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, -yDiv, yDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, -yDiv, yDiv);
+						this.contextDraft.stroke();
+					}
 				} else {
-					this.contextDraft.fillRect(
-						this.origX,
-						this.origY,
-						xDiv,
-						Math.abs(xDiv)
-					);
+					if (fillStyle) {
+						this.contextDraft.fillRect(
+							this.origX,
+							this.origY,
+							xDiv,
+							Math.abs(xDiv)
+						);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(
+							this.origX,
+							this.origY,
+							xDiv,
+							Math.abs(xDiv)
+						);
+						this.contextDraft.stroke();
+					}
 				}
 			} else {
 				if (Math.abs(xDiv) > Math.abs(yDiv)) {
-					this.contextDraft.fillRect(this.origX, this.origY, yDiv, yDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, yDiv, yDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, yDiv, yDiv);
+						this.contextDraft.stroke();
+					}
 				} else {
-					this.contextDraft.fillRect(this.origX, this.origY, xDiv, xDiv);
+					if (fillStyle) {
+						this.contextDraft.fillRect(this.origX, this.origY, xDiv, xDiv);
+					} else {
+						this.contextDraft.beginPath();
+						this.contextDraft.rect(this.origX, this.origY, xDiv, xDiv);
+						this.contextDraft.stroke();
+					}
 				}
 			}
 		} else {
-			this.contextDraft.fillRect(
-				this.origX,
-				this.origY,
-				coord[0] - this.origX,
-				coord[1] - this.origY
-			);
+			if (fillStyle) {
+				this.contextDraft.fillRect(
+					this.origX,
+					this.origY,
+					coord[0] - this.origX,
+					coord[1] - this.origY
+				);
+			} else {
+				this.contextDraft.beginPath();
+				this.contextDraft.rect(
+					this.origX,
+					this.origY,
+					coord[0] - this.origX,
+					coord[1] - this.origY
+				);
+				this.contextDraft.stroke();
+			}
 			console.log("NRF", regularFix);
 		}
 	}
@@ -82,54 +151,113 @@ class DrawingRectangle extends PaintFunction {
 
 			if (coord[0] > this.origX && coord[1] > this.origY) {
 				if (xDiv > yDiv) {
-					this.contextReal.fillRect(this.origX, this.origY, yDiv, yDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, yDiv, yDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, yDiv, yDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				} else {
-					this.contextReal.fillRect(this.origX, this.origY, xDiv, xDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, xDiv, xDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, xDiv, xDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				}
 			} else if (coord[0] > this.origX && coord[1] < this.origY) {
 				if (xDiv > Math.abs(yDiv)) {
-					this.contextReal.fillRect(
-						this.origX,
-						this.origY,
-						Math.abs(yDiv),
-						yDiv
-					);
+					if (fillStyle) {
+						this.contextReal.fillRect(
+							this.origX,
+							this.origY,
+							Math.abs(yDiv),
+							yDiv
+						);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, Math.abs(yDiv), yDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				} else {
-					this.contextReal.fillRect(this.origX, this.origY, xDiv, -xDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, xDiv, -xDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, xDiv, -xDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				}
 			} else if (coord[0] < this.origX && coord[1] > this.origY) {
 				if (Math.abs(xDiv) > yDiv) {
-					this.contextReal.fillRect(this.origX, this.origY, -yDiv, yDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, -yDiv, yDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, -yDiv, yDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				} else {
-					this.contextReal.fillRect(
-						this.origX,
-						this.origY,
-						xDiv,
-						Math.abs(xDiv)
-					);
+					if (fillStyle) {
+						this.contextReal.fillRect(
+							this.origX,
+							this.origY,
+							xDiv,
+							Math.abs(xDiv)
+						);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, xDiv, Math.abs(xDiv));
+						this.contextReal.stroke();
+					}
 					saveState();
 				}
 			} else {
 				if (Math.abs(xDiv) > Math.abs(yDiv)) {
-					this.contextReal.fillRect(this.origX, this.origY, yDiv, yDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, yDiv, yDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, yDiv, yDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				} else {
-					this.contextReal.fillRect(this.origX, this.origY, xDiv, xDiv);
+					if (fillStyle) {
+						this.contextReal.fillRect(this.origX, this.origY, xDiv, xDiv);
+					} else {
+						this.contextReal.beginPath();
+						this.contextReal.rect(this.origX, this.origY, xDiv, xDiv);
+						this.contextReal.stroke();
+					}
 					saveState();
 				}
 			}
 		} else {
-			this.contextReal.fillRect(
-				this.origX,
-				this.origY,
-				coord[0] - this.origX,
-				coord[1] - this.origY
-			);
+			if (fillStyle) {
+				this.contextReal.fillRect(
+					this.origX,
+					this.origY,
+					coord[0] - this.origX,
+					coord[1] - this.origY
+				);
+			} else {
+				this.contextReal.beginPath();
+				this.contextReal.rect(
+					this.origX,
+					this.origY,
+					coord[0] - this.origX,
+					coord[1] - this.origY
+				);
+				this.contextReal.stroke();
+			}
 			saveState();
 			// console.log("NRF", regularFix);
 		}

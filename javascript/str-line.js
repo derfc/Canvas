@@ -49,4 +49,8 @@ class DrawingStriaghtLine extends PaintFunction {
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}
+	reset() {
+		this.click = 0;
+		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+	}
 }

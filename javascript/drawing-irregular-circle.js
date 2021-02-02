@@ -37,7 +37,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextDraft.stroke();
+			if (fillStyle) {
+				this.contextDraft.fill();
+			} else {
+				this.contextDraft.stroke();
+			}
 			this.click = 0;
 		} else if (centerFix && !regularFix) {
 			this.contextDraft.lineJoin = "round";
@@ -57,7 +61,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextDraft.stroke();
+			if (fillStyle) {
+				this.contextDraft.fill();
+			} else {
+				this.contextDraft.stroke();
+			}
 			this.click = 0;
 		} else if (!centerFix && regularFix) {
 			this.contextDraft.lineJoin = "round";
@@ -75,7 +83,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextDraft.stroke();
+			if (fillStyle) {
+				this.contextDraft.fill();
+			} else {
+				this.contextDraft.stroke();
+			}
 			this.click = 0;
 		} else {
 			this.contextDraft.lineJoin = "round";
@@ -95,7 +107,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextDraft.stroke();
+			if (fillStyle) {
+				this.contextDraft.fill();
+			} else {
+				this.contextDraft.stroke();
+			}
 			this.click = 0;
 		}
 	}
@@ -111,7 +127,11 @@ class DrawingIrregularCircle extends PaintFunction {
 			let radius = Math.sqrt(xDiv ** 2 + yDiv ** 2);
 			this.contextReal.beginPath();
 			this.contextReal.arc(center[0], center[1], radius, 0, 2 * Math.PI, false);
-			this.contextReal.stroke();
+			if (fillStyle) {
+				this.contextReal.fill();
+			} else {
+				this.contextReal.stroke();
+			}
 			saveState();
 			this.click = 0;
 		} else if (centerFix && !regularFix) {
@@ -132,7 +152,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextReal.stroke();
+			if (fillStyle) {
+				this.contextReal.fill();
+			} else {
+				this.contextReal.stroke();
+			}
 			saveState();
 			this.click = 0;
 		} else if (!centerFix && regularFix) {
@@ -144,7 +168,11 @@ class DrawingIrregularCircle extends PaintFunction {
 			let radius = 0.5 * Math.sqrt(xDiv ** 2 + yDiv ** 2);
 			this.contextReal.beginPath();
 			this.contextReal.arc(center[0], center[1], radius, 0, 2 * Math.PI, false);
-			this.contextReal.stroke();
+			if (fillStyle) {
+				this.contextReal.fill();
+			} else {
+				this.contextReal.stroke();
+			}
 			saveState();
 			this.click = 0;
 		} else {
@@ -165,7 +193,11 @@ class DrawingIrregularCircle extends PaintFunction {
 				2 * Math.PI,
 				false
 			);
-			this.contextReal.stroke();
+			if (fillStyle) {
+				this.contextReal.fill();
+			} else {
+				this.contextReal.stroke();
+			}
 			saveState();
 			this.click = 0;
 		}

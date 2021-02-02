@@ -11,6 +11,7 @@ let currentFunction;
 let dragging = false;
 let regularFix = false;
 let centerFix = false;
+let fillStyle = false;
 
 $("#canvas-draft").mousedown(function (e) {
 	let mouseX = e.offsetX;
@@ -69,6 +70,15 @@ window.addEventListener("keydown", (e) => {
 		centerFix = true;
 		console.log("center fix", centerFix);
 	}
+	if (e.key == "Alt") {
+		fillStyle = true;
+		console.log("fill style", fillStyle);
+	}
+
+	if (e.key == "Enter") {
+		// contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+		currentFunction.join();
+	}
 });
 
 window.addEventListener("keyup", (e) => {
@@ -80,6 +90,10 @@ window.addEventListener("keyup", (e) => {
 	if (e.key == "Meta" || e.key == "Control") {
 		centerFix = false;
 		console.log("center fix", centerFix);
+	}
+	if (e.key == "Alt") {
+		fillStyle = false;
+		console.log("fill style", fillStyle);
 	}
 });
 
