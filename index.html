@@ -52,6 +52,15 @@
               id="strline"
             />
           </div>  
+          <!-- The Spray-Can button  -->
+          <div class="button" id="btn-spray-can">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-paintcan.png"
+              alt="strline"
+              id="spray-can"
+            />
+          </div> 
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
@@ -262,6 +271,12 @@
       async
       defer
     ></script>
+    <script
+    src="./javascript/drawing-spray-can.js"
+    type="text/javascript"
+    async
+    defer
+  ></script>
     <script type="text/javascript">
       $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -270,6 +285,9 @@
         });
         $("#drawing-line").click(() => {
           currentFunction = new DrawingLine(contextReal);
+        });
+        $("#spray-can").click(() => {
+          currentFunction = new DrawingSprayCan(contextReal);
         });
         $("#drawing-arc").click(() => {
           currentFunction = new DrawingArc(contextReal, contextDraft);
