@@ -1,11 +1,27 @@
+body {
+  overflow: hidden;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+nav {
+  border-bottom: 3px solid yellow!;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+}
+
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
 .canvas {
-  border: 1px black dotted;
+  border: 1px transparent solid;
   position: absolute;
-  /*
-  top: 0px;
-  bottom: 0px;
-  left: 200px;
-  right: 0px; */
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 30%);
 }
 
 #canvas-real {
@@ -15,56 +31,82 @@
 #canvas-draft {
   background-color: transparent;
 }
-body {
-  overflow: hidden;
-}
+
 #canvas-container {
   height: 720px;
+  margin: 20px 0px 0px 40px;
+  padding: 0px;
+  justify-content: start;
 }
 
 .mainbutton {
   display: grid;
   grid-template-columns: auto auto;
+  column-gap: 1em;
+  row-gap: 1em;
   /* grid-auto-rows: 30px; */
-  column-gap: 0.5em;
-  row-gap: 0.5em;
-  padding: 10px 10px;
-  /* width: 300px; */
+  background-color: #302f51;
   justify-content: center;
+  border-radius: 15px;
+  margin: 20px 0px 0px 20px;
+  padding: 15px 15px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
 }
 
 .utility-button {
-  font-size: 10px;
-  font-weight: 700;
-  background-color: rgba(207, 207, 23, 0.466);
   display: grid;
-  grid-template-columns: auto;
-  /* grid-auto-rows: 30px; */
+  grid-template-columns: auto auto;
+  /* row-gap: 1em; */
   column-gap: 1em;
-  row-gap: 0.5em;
-  padding: 10px 10px;
-  /* width: 250px; */
   justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 20px 0px 0px 20px;
+  padding: 15px 15px;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  background-color: #512f50;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+  /* width: 250px; */
 }
 
 .buttonAll {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
-}
-
-.icons {
-  width: 50px;
-  cursor: pointer;
-}
-
-.contain {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0px;
-  padding: 0px;
+  background-color: white;
 }
 
 .button {
-  /* background-color: goldenrod; */
+  box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
+}
+
+.mainbutton .icons {
+  /* #clear-canvas not included, intentional */
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
+#clear-canvas {
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
+.btn-active {
+  border: 3px #7510f7 solid !important;
+}
+
+select {
+  width: 45px;
+}
+
+label {
+  margin: 7px 0px;
 }

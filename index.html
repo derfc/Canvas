@@ -6,6 +6,9 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+</style>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -21,11 +24,34 @@
     />
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">
+        <img src="./img/icons-white/canvasicons-clear.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Not-Canvas
+      </a>
+    </nav>
     <!-- <h1>Canvas Application</h1> -->
     <div class="contain">
       <div class="buttonAll">
-        <!-- <div class="buttons"> -->
         <div class="mainbutton">
+          <!-- The drawing line button  -->
+          <div class="button" id="btn-drawing-line">
+            <img
+              class="img-fluid icons btn-active"
+              src="img/canvasicons-pencil.png"
+              alt="line"
+              id="drawing-line"
+            />
+          </div>
+          <!-- The str-line button  -->
+          <div class="button" id="btn-strline">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-stright.png"
+              alt="strline"
+              id="strline"
+            />
+          </div>  
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
@@ -34,14 +60,14 @@
               alt="rectangle"
               id="drawing-rectangle"
             />
-          </div>
-          <!-- The drawing line button  -->
-          <div class="button" id="btn-drawing-line">
+          </div>  
+          <!-- The drawing circle button  -->
+          <div class="button" id="btn-drawing-circle">
             <img
               class="img-fluid icons"
-              src="img/canvasicons-pencil.png"
-              alt="line"
-              id="drawing-line"
+              src="img/canvasicons-circle.png"
+              alt="cicle"
+              id="drawing-circle"
             />
           </div>
           <!-- The drawing arc button  -->
@@ -62,19 +88,18 @@
               id="drawing-bezier-curve"
             />
           </div>
-          <!-- The drawing circle button  -->
-          <!-- <span class="btn btn-primary" id="drawing-circle">Draw circle</span> -->
-          <div class="button" id="btn-drawing-circle">
+          <!-- The Polygon button  -->
+          <div class="button" id="btn-drawing-polygon">
             <img
               class="img-fluid icons"
-              src="img/canvasicons-circle.png"
-              alt="cicle"
-              id="drawing-circle"
+              src="img/canvasicons-polygon.png"
+              alt="polygon"
+              id="drawing-polygon"
             />
           </div>
           <!-- The Text button  -->
-          <!-- <span class="btn btn-info" id="text">Text</span> -->
           <div class="button" id="btn-text">
+            <!-- <input type="range" min="10" max="99" value="49" step="1" id="text-size"> -->
             <img
               class="img-fluid icons"
               src="img/canvasicons-text.png"
@@ -90,13 +115,14 @@
               alt="eraser"
               id="eraser"
             />
-          </div>
+          </div>     
+          
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
           <div class="button" id="btn-clear-canvas">
             <img
-              class="img-fluid icons"
+              class="img-fluid"
               src="img/canvasicons-clear.png"
               alt="clear-canvas"
               id="clear-canvas"
@@ -107,12 +133,33 @@
           <!-- Stroke Size -->
           <label for="stroke-size">Stroke Size</label>
           <select id="stroke-size">
-            <option value="1">Ultrafine</option>
-            <option value="3">Fine</option>
-            <option value="5" selected>Normal</option>
-            <option value="7">Bold</option>
+            <option value="1">XS</option>
+            <option value="3">S</option>
+            <option value="5" selected>M</option>
+            <option value="9">L</option>
+            <option value="15">XL</option>
+            <option value="25">XXL</option>
+          </select>
+          <!-- text Size -->
+          <label for="text-size">Text Size</label>
+          <select id="text-size">
+            <option value="10">10px</option>
+            <option value="18">18px</option>
+            <option value="24">24px</option>
+            <option value="30" selected>30px</option>
+            <option value="48">48px</option>
+            <option value="60">60px</option>>
+            <option value="72">72px</option>>
+          </select>
+          <!-- Text Size -->
+          <label for="text-size">Text Size</label>
+          <select id="text-size">
+            <option value="18">Small</option>
+            <option value="30" selected>Normal</option>
+            <option value="50">Large</option>
+            <!-- <option value="7">Bold</option>
             <option value="9">Bolder</option>
-            <option value="15">Superbold</option>
+            <option value="15">Superbold</option> -->
           </select>
           <!-- Color Selectors -->
           <label for="strokecolor">Stroke Color: </label>
@@ -136,13 +183,13 @@
           id="canvas-real"
           class="canvas"
           width="950px"
-          height="550px"
+          height="520px"
         ></canvas>
         <canvas
           id="canvas-draft"
           class="canvas"
           width="950px"
-          height="550px"
+          height="520px"
         ></canvas>
         <input id="textInput" name="inputField" value="" style="display: none"></input>
       </div>
@@ -236,6 +283,12 @@
       defer
     ></script>
     <script
+      src="./javascript/drawing-polygon.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <script
       src="./javascript/drawing-arc.js"
       type="text/javascript"
       async
@@ -262,9 +315,16 @@
     ></script>
     <!-- The drawing circle functionality  -->
     <script
-      src="./javascript/drawing-circle.js"
+      src="./javascript/drawing-irregular-circle.js"
       type="text/javascript"
       async
+      defer
+    ></script>
+    <!-- str-line function -->
+    <script 
+      src="./javascript/str-line.js" 
+      type="text/javascript" 
+      async 
       defer
     ></script>
     <script
@@ -292,10 +352,16 @@
           currentFunction = new Eraser(contextReal);
         });
         $("#drawing-circle").click(() => {
-          currentFunction = new DrawingCircle(contextReal, contextDraft);
+          currentFunction = new DrawingIrregularCircle(contextReal, contextDraft);
+        });
+        $("#drawing-polygon").click(() => {
+          currentFunction = new DrawingPolygon(contextReal, contextDraft);
         });
         $("#text").click(() => {
           currentFunction = new DrawingText(contextReal, contextDraft);
+        });
+        $("#strline").click(() => {
+          currentFunction = new DrawingStriaghtLine(contextReal, contextDraft);
         });
       });
     </script>
