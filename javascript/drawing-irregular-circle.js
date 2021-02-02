@@ -112,6 +112,7 @@ class DrawingIrregularCircle extends PaintFunction {
 			this.contextReal.beginPath();
 			this.contextReal.arc(center[0], center[1], radius, 0, 2 * Math.PI, false);
 			this.contextReal.stroke();
+			saveState();
 			this.click = 0;
 		} else if (centerFix && !regularFix) {
 			this.contextReal.lineJoin = "round";
@@ -132,6 +133,7 @@ class DrawingIrregularCircle extends PaintFunction {
 				false
 			);
 			this.contextReal.stroke();
+			saveState();
 			this.click = 0;
 		} else if (!centerFix && regularFix) {
 			this.contextReal.lineJoin = "round";
@@ -143,6 +145,7 @@ class DrawingIrregularCircle extends PaintFunction {
 			this.contextReal.beginPath();
 			this.contextReal.arc(center[0], center[1], radius, 0, 2 * Math.PI, false);
 			this.contextReal.stroke();
+			saveState();
 			this.click = 0;
 		} else {
 			this.contextReal.lineJoin = "round";
@@ -163,6 +166,7 @@ class DrawingIrregularCircle extends PaintFunction {
 				false
 			);
 			this.contextReal.stroke();
+			saveState();
 			this.click = 0;
 		}
 	}

@@ -106,6 +106,7 @@ class DrawingPolygon extends PaintFunction {
 		// console.log("origional", this.origX, this.origY);
 
 		this.contextReal.stroke();
+		saveState();
 	}
 	onMouseLeave() {}
 	onMouseEnter() {}

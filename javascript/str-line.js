@@ -43,6 +43,7 @@ class DrawingStriaghtLine extends PaintFunction {
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			this.contextReal.quadraticCurveTo(cpx0, cpy0, this.endx0, this.endy0);
 			this.contextReal.stroke();
+			saveState();
 			this.click = 0;
 		}
 	}
