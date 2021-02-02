@@ -28,3 +28,10 @@ $("#clear-canvas").click(() => {
   contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
   contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 });
+
+////////////DOM
+$(".icons").click(function (e) {
+  console.log(e);
+  console.log(this);
+  this.classList.remove("active");
+});

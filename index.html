@@ -24,7 +24,6 @@
     <!-- <h1>Canvas Application</h1> -->
     <div class="contain">
       <div class="buttonAll">
-        <!-- <div class="buttons"> -->
         <div class="mainbutton">
           <!-- The drawing line button  -->
           <div class="button" id="btn-drawing-line">
@@ -47,7 +46,7 @@
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
-              class="img-fluid icons"
+              class="img-fluid icons btn-active"
               src="img/canvasicons-rect.png"
               alt="rectangle"
               id="drawing-rectangle"
@@ -80,8 +79,16 @@
               id="drawing-bezier-curve"
             />
           </div>
+          <!-- The Polygon button  -->
+          <div class="button" id="btn-drawing-polygon">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-polygon.png"
+              alt="polygon"
+              id="drawing-polygon"
+            />
+          </div>
           <!-- The Text button  -->
-          <!-- <span class="btn btn-info" id="text">Text</span> -->
           <div class="button" id="btn-text">
             <img
               class="img-fluid icons"
@@ -190,6 +197,12 @@
       defer
     ></script>
     <script
+      src="./javascript/drawing-polygon.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <script
       src="./javascript/drawing-arc.js"
       type="text/javascript"
       async
@@ -211,7 +224,7 @@
     ></script>
     <!-- The drawing circle functionality  -->
     <script
-      src="./javascript/drawing-circle.js"
+      src="./javascript/drawing-irregular-circle.js"
       type="text/javascript"
       async
       defer
@@ -233,8 +246,8 @@
       $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
         $("#drawing-rectangle").click(() => {
-          // $('.mainbutton *').css('background-color', 'red')
-          // $('.mainbutton img').css('box-shadow', 'inset 0px 0px 0px 3px #7510f7')
+          $('.mainbutton *').addClass('active')
+          // $('.mainbutton *').css('box-shadow', 'inset 0px 0px 0px 3px #7510f7')
           //UNFINISHED DOM
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
@@ -251,7 +264,10 @@
           currentFunction = new Eraser(contextReal);
         });
         $("#drawing-circle").click(() => {
-          currentFunction = new DrawingCircle(contextReal, contextDraft);
+          currentFunction = new DrawingIrregularCircle(contextReal, contextDraft);
+        });
+        $("#drawing-polygon").click(() => {
+          currentFunction = new DrawingPolygon(contextReal, contextDraft);
         });
         $("#text").click(() => {
           currentFunction = new DrawingText(contextReal, contextDraft);

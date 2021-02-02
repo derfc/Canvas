@@ -67,11 +67,11 @@ body {
   border-radius: 5px;
   box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
   background-color: white;
-  /* border: #7510f7 3px solid; */
 }
 
-.active {
-  box-shadow: inset 0px 0px 0px 3px #7510f7;
+.btn-active {
+  /* box-shadow: inset 0px 0px 0px 3px #7510f7; */
+  border: 2px #7510f7 solid;
 }
 
 .contain {
