@@ -10,6 +10,7 @@ class DrawingStriaghtLine extends PaintFunction {
 	onMouseDown(coord, event) {
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
 		this.contextDraft.lineWidth = canvasSettings.strokeSize;
+		this.contextDraft.lineCap = "round";
 	}
 	onDragging(coord, event) {}
 
@@ -17,6 +18,7 @@ class DrawingStriaghtLine extends PaintFunction {
 		if (this.click === 1) {
 			var cpx0 = coord[0];
 			var cpy0 = coord[1];
+			this.contextDraft.lineCap = "round";
 			this.contextDraft.beginPath();
 			this.contextDraft.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
@@ -38,6 +40,7 @@ class DrawingStriaghtLine extends PaintFunction {
 			this.endy0 = coord[1];
 			this.contextReal.strokeStyle = canvasSettings.colorStroke;
 			this.contextReal.lineWidth = canvasSettings.strokeSize;
+			this.contextReal.lineCap = "round";
 			this.contextReal.beginPath();
 			this.contextReal.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
