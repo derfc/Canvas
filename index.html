@@ -6,6 +6,9 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+</style>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -21,6 +24,12 @@
     />
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">
+        <img src="./img/icons-white/canvasicons-clear.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Not-Canvas
+      </a>
+    </nav>
     <!-- <h1>Canvas Application</h1> -->
     <div class="contain">
       <div class="buttonAll">
@@ -28,7 +37,7 @@
           <!-- The drawing line button  -->
           <div class="button" id="btn-drawing-line">
             <img
-              class="img-fluid icons"
+              class="img-fluid icons btn-active"
               src="img/canvasicons-pencil.png"
               alt="line"
               id="drawing-line"
@@ -46,7 +55,7 @@
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
-              class="img-fluid icons btn-active"
+              class="img-fluid icons"
               src="img/canvasicons-rect.png"
               alt="rectangle"
               id="drawing-rectangle"
@@ -111,7 +120,7 @@
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
           <div class="button" id="btn-clear-canvas">
             <img
-              class="img-fluid icons"
+              class="img-fluid"
               src="img/canvasicons-clear.png"
               alt="clear-canvas"
               id="clear-canvas"
@@ -122,12 +131,12 @@
           <!-- Stroke Size -->
           <label for="stroke-size">Stroke Size</label>
           <select id="stroke-size">
-            <option value="1">Ultrafine</option>
-            <option value="3">Fine</option>
-            <option value="5" selected>Normal</option>
-            <option value="7">Bold</option>
-            <option value="9">Bolder</option>
-            <option value="15">Superbold</option>
+            <option value="1">XS</option>
+            <option value="3">S</option>
+            <option value="5" selected>M</option>
+            <option value="9">L</option>
+            <option value="15">XL</option>
+            <option value="25">XXL</option>
           </select>
           <!-- text Size -->
           <label for="text-size">Text Size</label>
@@ -162,13 +171,13 @@
           id="canvas-real"
           class="canvas"
           width="950px"
-          height="550px"
+          height="520px"
         ></canvas>
         <canvas
           id="canvas-draft"
           class="canvas"
           width="950px"
-          height="550px"
+          height="520px"
         ></canvas>
         <input id="textInput" name="inputField" value="" style="display: none"></input>
       </div>
@@ -257,9 +266,6 @@
       $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
         $("#drawing-rectangle").click(() => {
-          $('.mainbutton *').addClass('active')
-          // $('.mainbutton *').css('box-shadow', 'inset 0px 0px 0px 3px #7510f7')
-          //UNFINISHED DOM
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
         $("#drawing-line").click(() => {

@@ -1,11 +1,27 @@
+body {
+  overflow: hidden;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+nav {
+  border-bottom: 3px solid yellow!;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+}
+
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
 .canvas {
-  border: 1px black dotted;
+  border: 1px transparent solid;
   position: absolute;
-  /*
-  top: 0px;
-  bottom: 0px;
-  left: 200px;
-  right: 0px; */
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 30%);
 }
 
 #canvas-real {
@@ -15,11 +31,12 @@
 #canvas-draft {
   background-color: transparent;
 }
-body {
-  overflow: hidden;
-}
+
 #canvas-container {
   height: 720px;
+  margin: 20px 0px 0px 40px;
+  padding: 0px;
+  justify-content: start;
 }
 
 .mainbutton {
@@ -29,28 +46,28 @@ body {
   row-gap: 1em;
   /* grid-auto-rows: 30px; */
   background-color: #302f51;
-  /* background-color: #7510f7; */
   justify-content: center;
   border-radius: 15px;
-  margin-left: 20px;
-  padding: 1.5em 1em;
+  margin: 20px 0px 0px 20px;
+  padding: 15px 15px;
   box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
 }
 
 .utility-button {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto auto;
+  /* row-gap: 1em; */
   column-gap: 1em;
-  row-gap: 0.5em;
   justify-content: center;
-  /* border: 1px black solid; */
+  align-items: center;
   border-radius: 15px;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 10px 10px;
-  font-size: 10px;
+  margin: 20px 0px 0px 20px;
+  padding: 15px 15px;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
   font-weight: 800;
-  background-color: rgba(253, 253, 176, 0.651);
+  background-color: #512f50;
   box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
   /* width: 250px; */
 }
@@ -61,22 +78,35 @@ body {
   background-color: white;
 }
 
+.button {
+  box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
+}
+
 .mainbutton .icons {
-  width: 50px;
+  /* #clear-canvas not included, intentional */
+  width: 45px;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
   background-color: white;
+  border: 3px white solid;
+}
+
+#clear-canvas {
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
 }
 
 .btn-active {
-  /* box-shadow: inset 0px 0px 0px 3px #7510f7; */
-  border: 2px #7510f7 solid;
+  border: 3px #7510f7 solid !important;
 }
 
-.contain {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0px;
-  padding: 0px;
+select {
+  width: 45px;
+}
+
+label {
+  margin: 7px 0px;
 }
