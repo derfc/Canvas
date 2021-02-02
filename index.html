@@ -26,6 +26,24 @@
       <div class="buttonAll">
         <!-- <div class="buttons"> -->
         <div class="mainbutton">
+          <!-- The drawing line button  -->
+          <div class="button" id="btn-drawing-line">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-pencil.png"
+              alt="line"
+              id="drawing-line"
+            />
+          </div>
+          <!-- The str-line button  -->
+          <div class="button" id="btn-strline">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-stright.png"
+              alt="strline"
+              id="strline"
+            />
+          </div>  
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
@@ -34,14 +52,14 @@
               alt="rectangle"
               id="drawing-rectangle"
             />
-          </div>
-          <!-- The drawing line button  -->
-          <div class="button" id="btn-drawing-line">
+          </div>  
+          <!-- The drawing circle button  -->
+          <div class="button" id="btn-drawing-circle">
             <img
               class="img-fluid icons"
-              src="img/canvasicons-pencil.png"
-              alt="line"
-              id="drawing-line"
+              src="img/canvasicons-circle.png"
+              alt="cicle"
+              id="drawing-circle"
             />
           </div>
           <!-- The drawing arc button  -->
@@ -62,16 +80,6 @@
               id="drawing-bezier-curve"
             />
           </div>
-          <!-- The drawing circle button  -->
-          <!-- <span class="btn btn-primary" id="drawing-circle">Draw circle</span> -->
-          <div class="button" id="btn-drawing-circle">
-            <img
-              class="img-fluid icons"
-              src="img/canvasicons-circle.png"
-              alt="cicle"
-              id="drawing-circle"
-            />
-          </div>
           <!-- The Text button  -->
           <!-- <span class="btn btn-info" id="text">Text</span> -->
           <div class="button" id="btn-text">
@@ -90,16 +98,7 @@
               alt="eraser"
               id="eraser"
             />
-          </div>
-          <!-- The str-line button  -->
-          <div class="button" id="btn-strline">
-            <img
-              class="img-fluid icons"
-              src="img/canvasicons-eraser.png"
-              alt="strline"
-              id="strline"
-            />
-          </div>          
+          </div>      
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
@@ -234,6 +233,9 @@
       $(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
         $("#drawing-rectangle").click(() => {
+          // $('.mainbutton *').css('background-color', 'red')
+          // $('.mainbutton img').css('box-shadow', 'inset 0px 0px 0px 3px #7510f7')
+          //UNFINISHED DOM
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
         $("#drawing-line").click(() => {

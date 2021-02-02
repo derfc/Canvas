@@ -9,17 +9,18 @@ class DrawingStriaghtLine extends PaintFunction {
 
 	onMouseDown(coord, event) {
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
+		this.contextDraft.lineWidth = canvasSettings.strokeSize;
 	}
 	onDragging(coord, event) {}
 
 	onMouseMove(coord, event) {
 		if (this.click === 1) {
-			var endx0 = coord[0];
-			var endy0 = coord[1];
+			var cpx0 = coord[0];
+			var cpy0 = coord[1];
 			this.contextDraft.beginPath();
 			this.contextDraft.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-			this.contextDraft.lineTo(endx0, endy0);
+			this.contextDraft.quadraticCurveTo(cpx0, cpy0, cpx0, cpy0);
 			this.contextDraft.stroke();
 		}
 	}
@@ -31,12 +32,16 @@ class DrawingStriaghtLine extends PaintFunction {
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			this.click++;
 		} else if (this.click === 1) {
+			var cpx0 = coord[0];
+			var cpy0 = coord[1];
 			this.endx0 = coord[0];
 			this.endy0 = coord[1];
+			this.contextReal.strokeStyle = canvasSettings.colorStroke;
+			this.contextReal.lineWidth = canvasSettings.strokeSize;
 			this.contextReal.beginPath();
 			this.contextReal.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-			this.contextReal.lineTo(this.endx0, this.endy0);
+			this.contextReal.quadraticCurveTo(cpx0, cpy0, this.endx0, this.endy0);
 			this.contextReal.stroke();
 			this.click = 0;
 		}
