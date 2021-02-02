@@ -21,9 +21,9 @@ $("#stroke-size")[0].oninput = function () {
   canvasSettings.strokeSize = this.value;
 };
 
-$("#text-size")[0].oninput = function (){
+$("#text-size")[0].oninput = function () {
   canvasSettings.textsize = this.value;
-}
+};
 
 // $("#text-size")[0].oninput = function () {
 //   canvasSettings.textsize = this.value;
@@ -36,8 +36,6 @@ $("#clear-canvas").click(() => {
 
 ////////////DOM
 $(".icons").click(function (e) {
-  // console.log(e);
-  console.log(this);
   $(".icons").removeClass("btn-active");
   $(this).addClass("btn-active");
 });

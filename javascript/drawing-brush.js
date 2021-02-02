@@ -1,4 +1,4 @@
-class DrawingSprayCan extends PaintFunction {
+class DrawingBrush extends PaintFunction {
   // This class extends the PaintFunction class
   // You are only passing one instance here
 
@@ -32,10 +32,8 @@ class DrawingSprayCan extends PaintFunction {
       20
     );
     gradient.addColorStop(0, color);
-    // gradient.addColorStop(0.5, color);
-    // gradient.addColorStop(1, color);
-    gradient.addColorStop(0.5, "rgba(0,0,0,0.5)");
-    gradient.addColorStop(1, "rgba(0,0,0,0)");
+    gradient.addColorStop(0.5, `${color}60`);
+    gradient.addColorStop(1, `${color}03`);
     this.context.fillStyle = gradient;
     this.context.fillRect(coord[0] - 20, coord[1] - 20, 40, 40);
   }
