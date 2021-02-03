@@ -134,7 +134,15 @@
               id="eraser"
             />
           </div>     
-          
+          <!-- The draw-stamping button  -->
+          <div class="button" id="btn-stamping">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-eraser.png"
+              alt="stamping"
+              id="stamping"
+            />
+          </div>  
           <!-- UTILITIES -->
           <!-- Clear All -->
           <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
@@ -247,6 +255,13 @@
   async
   defer
 ></script>
+    <!-- stamping function -->
+    <script
+    src="./javascript/drawing-stamping.js"
+    type="text/javascript"
+    async
+    defer
+  ></script>
   <script type="text/javascript">
     $(() => {
       currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -282,6 +297,9 @@
       });
       $('#drawing-brush').click(() => {
         currentFunction = new DrawingBrush(contextReal);
+      });
+      $('#stamping').click(() => {
+        currentFunction = new DrawingStamping(contextReal);
       });
     });
   </script>
