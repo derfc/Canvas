@@ -135,6 +135,16 @@
             alt="download"
             id="download"
             />
+          </div>     
+          <!-- The draw-stamping button  -->
+          <div class="button" id="btn-stamping">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-eraser.png"
+              alt="stamping"
+              id="stamping"
+            />
+          </div>  
         </div>
         <!-- The eraser button  -->
         <div class="button" id="btn-eraser">
@@ -237,6 +247,13 @@
   <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
   <!-- Circle -->
   <script src="./javascript/drawing-irregular-circle.js" type="text/javascript" async defer></script>
+    <!-- stamping function -->
+    <script
+    src="./javascript/drawing-stamping.js"
+    type="text/javascript"
+    async
+    defer
+  ></script>
   <!-- Brush -->
   <script src="./javascript/drawing-brush.js" type="text/javascript" async defer></script>
   <!-- Input Text -->
@@ -280,6 +297,9 @@
       });
       $('#drawing-brush').click(() => {
         currentFunction = new DrawingBrush(contextReal);
+      });
+      $('#stamping').click(() => {
+        currentFunction = new DrawingStamping(contextReal);
       });
     });
   </script>
