@@ -4,15 +4,15 @@ class DrawingIrregularCircle extends PaintFunction {
 		this.contextReal = contextReal;
 		this.contextDraft = contextDraft;
 		this.click = 0;
+	}
+
+	onMouseDown(coord, event) {
 		this.contextDraft.lineWidth = canvasSettings.strokeSize;
 		this.contextDraft.fillStyle = canvasSettings.colorFill;
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
 		this.contextReal.lineWidth = canvasSettings.strokeSize;
 		this.contextReal.fillStyle = canvasSettings.colorFill;
 		this.contextReal.strokeStyle = canvasSettings.colorStroke;
-	}
-
-	onMouseDown(coord, event) {
 		if (this.click == 0) {
 			this.origX = coord[0];
 			this.origY = coord[1];

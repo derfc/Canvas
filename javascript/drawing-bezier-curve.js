@@ -14,10 +14,8 @@ class DrawingBezierCurve extends PaintFunction {
 	// On mouse down, ensure that the pen has these features
 	onMouseDown(coord, event) {
 		this.contextDraft.lineWidth = canvasSettings.strokeSize;
-		this.contextDraft.fillStyle = canvasSettings.colorFill;
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
 		this.contextReal.lineWidth = canvasSettings.strokeSize;
-		this.contextReal.fillStyle = canvasSettings.colorFill;
 		this.contextReal.strokeStyle = canvasSettings.colorStroke;
 	}
 	onDragging(coord, event) {}
