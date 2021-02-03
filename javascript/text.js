@@ -25,8 +25,10 @@ class DrawingText extends PaintFunction {
 
       // this.contextDraft.font = `${canvasSettings.textsize}px ${canvasSettings.textfont}`;
       // this.contextDraft.fillStyle = canvasSettings.colorFill;
-      this.contextDraft.font = `${canvasSettings.textsize}px italic bold`
+
+      // this.contextDraft.font = "30px italic bold ";
       this.contextDraft.fillStyle = canvasSettings.colorFill;
+      this.contextDraft.font = `${canvasSettings.textSize}px italic bold`;
       let textContent = textInput.value;
       textInput.style["z-index"] = 1;
       textInput.value = "";
@@ -44,9 +46,9 @@ class DrawingText extends PaintFunction {
       // this.contextReal.font = `${canvasSettings.textsize}px ${canvasSettings.textfont}`;
       // this.contextReal.fillStyle = canvasSettings.colorFill;
 
-      this.contextReal.font = `${canvasSettings.textsize}px italic bold`
+      // this.contextReal.font = "30px italic bold ";
       this.contextReal.fillStyle = canvasSettings.colorFill;
-
+      this.contextReal.font = `${canvasSettings.textSize}px italic bold`;
       let textContent = textInput.value;
       textInput.style["z-index"] = 6;
       textInput.value = "";
@@ -68,7 +70,7 @@ class DrawingText extends PaintFunction {
       // this.contextReal.font = `${canvasSettings.textsize}px ${canvasSettings.textfont}`;
       // this.contextReal.fillStyle = canvasSettings.colorFill;
 
-      this.contextReal.font = `${canvasSettings.textsize}px italic bold`
+      this.contextReal.font = `${canvasSettings.textSize}px italic bold`;
       this.contextReal.fillStyle = canvasSettings.colorFill;
 
       let textContent = textInput.value;
@@ -77,6 +79,7 @@ class DrawingText extends PaintFunction {
 
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.fillText(textContent, this.origX, this.origY + 20);
+      saveState();
       this.clickNumber = 0;
     }
   }
@@ -84,6 +87,17 @@ class DrawingText extends PaintFunction {
   onMouseMove() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  reset() {
+    this.clicclickNumberk = 0;
+    $("#textInput").css({
+      display: "none",
+      transform:
+        "translateY(" + this.origY + "px)translateX(" + this.origX + "px)",
+      padding: "0",
+    });
+    textInput.value = "";
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+  }
 }
 
 let test1 = { test: "test1" };
