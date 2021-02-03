@@ -194,117 +194,68 @@
         <input id="textInput" name="inputField" value="" style="display: none"></input>
       </div>
     </div>
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <!-- The drawing functionality  -->
-    <script
-      src="./javascript/canvas-common.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- Canvas Utilities -->
-    <script
-      src="./javascript/utilities.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- The drawing line functionality  -->
-    <script
-      src="./javascript/drawing-line.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- The drawing rectangle functionality  -->
-    <script
-      src="./javascript/drawing-rectangle.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <script
-      src="./javascript/drawing-polygon.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <script
-      src="./javascript/drawing-arc.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- The drawing bezier curve functionality  -->
-    <script
-      src="./javascript/drawing-bezier-curve.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- The eraser functionality  -->
-    <script
-      src="./javascript/eraser.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- The drawing circle functionality  -->
-    <script
-      src="./javascript/drawing-irregular-circle.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <!-- str-line function -->
-    <script 
-      src="./javascript/str-line.js" 
-      type="text/javascript" 
-      async 
-      defer
-    ></script>
-    <script
-      src="./javascript/text.js"
-      type="text/javascript"
-      async
-      defer
-    ></script>
-    <script type="text/javascript">
-      $(() => {
+    <div class="container" id="canvas-container">
+      <canvas id="canvas-real" class="canvas" width="950px" height="550px"></canvas>
+      <canvas id="canvas-draft" class="canvas" width="950px" height="550px"></canvas>
+      <input id="textInput" name="inputField" value="" style="display: none"></input>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!-- The drawing functionality  -->
+  <script src="./javascript/canvas-common.js" type="text/javascript" async defer></script>
+  <!-- Canvas Utilities -->
+  <script src="./javascript/utilities.js" type="text/javascript" async defer></script>
+  <!-- Canvas Undo -->
+  <script src="./javascript/undo.js" type="text/javascript" async defer></script>
+  <!-- The drawing line functionality  -->
+  <script src="./javascript/drawing-line.js" type="text/javascript" async defer></script>
+  <!-- The drawing rectangle functionality  -->
+  <script src="./javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
+  <script src="./javascript/drawing-irregular-polygon.js" type="text/javascript" async defer></script>
+  <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
+  <!-- The drawing bezier curve functionality  -->
+  <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+  <!-- The eraser functionality  -->
+  <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
+  <!-- The drawing circle functionality  -->
+  <script src="./javascript/drawing-irregular-circle.js" type="text/javascript" async defer></script>
+  <!-- str-line function -->
+  <script src="./javascript/str-line.js" type="text/javascript" async defer></script>
+  <script src="./javascript/text.js" type="text/javascript" async defer></script>
+  <script type="text/javascript">
+    $(() => {
+      currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
-        $("#drawing-rectangle").click(() => {
-          currentFunction = new DrawingRectangle(contextReal, contextDraft);
-        });
-        $("#drawing-line").click(() => {
-          currentFunction = new DrawingLine(contextReal);
-        });
-        $("#drawing-arc").click(() => {
-          currentFunction = new DrawingArc(contextReal, contextDraft);
-        });
-        $("#drawing-bezier-curve").click(() => {
-          currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
-        });
-        $("#eraser").click(() => {
-          currentFunction = new Eraser(contextReal);
-        });
-        $("#drawing-circle").click(() => {
-          currentFunction = new DrawingIrregularCircle(contextReal, contextDraft);
-        });
-        $("#drawing-polygon").click(() => {
-          currentFunction = new DrawingPolygon(contextReal, contextDraft);
-        });
-        $("#text").click(() => {
-          currentFunction = new DrawingText(contextReal, contextDraft);
-        });
-        $("#strline").click(() => {
-          currentFunction = new DrawingStriaghtLine(contextReal, contextDraft);
-        });
       });
-    </script>
-  </body>
+      $("#drawing-line").click(() => {
+        currentFunction = new DrawingLine(contextReal);
+      });
+      $("#drawing-arc").click(() => {
+        currentFunction = new DrawingArc(contextReal, contextDraft);
+      });
+      $("#drawing-bezier-curve").click(() => {
+        currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
+      });
+      $("#eraser").click(() => {
+        currentFunction = new Eraser(contextReal);
+      });
+      $("#drawing-circle").click(() => {
+        currentFunction = new DrawingIrregularCircle(contextReal, contextDraft);
+      });
+      $("#drawing-polygon").click(() => {
+        currentFunction = new DrawingIrregularPolygon(contextReal, contextDraft);
+      });
+      $("#text").click(() => {
+        currentFunction = new DrawingText(contextReal, contextDraft);
+      });
+      $("#strline").click(() => {
+        currentFunction = new DrawingStriaghtLine(contextReal, contextDraft);
+      });
+    });
+  </script>
+</body>
+
 </html>
