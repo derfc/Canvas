@@ -25,17 +25,20 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark sticky-top">
+    <!-- <nav class="navbar navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="#">
-        <!-- <img src="./img/canvasicons-clear1.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Not-Canvas -->
         <div class="logo">
           <b>nostal<span>gi</span>c pain<span>t</span></b>
         </div>
       </a>
-    </nav>
+    </nav> -->
     <div class="contain">
       <div class="buttonAll">
+        <div class="logo-div">
+          <div class="logo">
+            <b>nostal<span>gi</span>c pain<span>t</span></b>
+          </div>
+        </div>
         <div class="mainbutton">
           <!-- The drawing line button  -->
           <div class="button" id="btn-drawing-line">
@@ -55,15 +58,6 @@
               id="strline"
             />
           </div>  
-          <!-- The Brush button  -->
-          <div class="button" id="btn-drawing-brush">
-            <img
-              class="img-fluid icons"
-              src="img/canvasicons-paintcan.png"
-              alt="strline"
-              id="drawing-brush"
-            />
-          </div> 
           <!-- The drawing rectangle button  -->
           <div class="button" id="btn-drawing-rectangle">
             <img
@@ -118,6 +112,24 @@
               id="drawing-irregular-polygon"
             />
           </div>
+          <!-- The Brush button  -->
+          <div class="button" id="btn-drawing-brush">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-paintcan.png"
+              alt="strline"
+              id="drawing-brush"
+            />
+          </div> 
+          <!-- The draw-stamping button  -->
+          <div class="button" id="btn-stamping">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-stamp.png"
+              alt="stamping"
+              id="stamping"
+            />
+          </div>  
           <!-- The Text button  -->
           <div class="button" id="btn-text">
             <img
@@ -136,16 +148,7 @@
             id="download"
             />
           </div>     
-          <!-- The draw-stamping button  -->
-          <div class="button" id="btn-stamping">
-            <img
-              class="img-fluid icons"
-              src="img/canvasicons-eraser.png"
-              alt="stamping"
-              id="stamping"
-            />
-          </div>  
-                  <!-- The eraser button  -->
+        <!-- The eraser button  -->
         <div class="button" id="btn-eraser">
           <img
             class="img-fluid icons"
@@ -263,7 +266,7 @@
   <script src="./javascript/undo.js" type="text/javascript" async defer></script>
   <script type="text/javascript">
     $(() => {
-      currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      currentFunction = new DrawingLine(contextReal);
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
       });

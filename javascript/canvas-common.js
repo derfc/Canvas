@@ -70,7 +70,7 @@ window.addEventListener("keydown", (e) => {
     centerFix = true;
     console.log("center fix", centerFix);
   }
-  if (e.key == "Alt") {
+  if (e.key == "Alt" || e.key == "c") {
     fillStyle = true;
     console.log("fill style", fillStyle);
   }
@@ -91,7 +91,7 @@ window.addEventListener("keyup", (e) => {
     centerFix = false;
     console.log("center fix", centerFix);
   }
-  if (e.key == "Alt") {
+  if (e.key == "Alt" || e.key == "c") {
     fillStyle = false;
     console.log("fill style", fillStyle);
   }
