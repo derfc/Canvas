@@ -118,32 +118,19 @@ label {
 }
 
 /* ANIMATED LOGO */
-
 :root {
   --color: #ff4444;
 }
-/* body {
-  background-color: black;
-  background-size: cover;
-  margin: 0;
-} */
 .logo {
   text-align: center;
   /* height: 250px; */
   margin-left: 25px;
-  /* position: absolute;
-  top: 150px;
-  left: 0;
-  right: 0;
-  bottom: 0; */
   user-select: none;
 }
 
 .logo b {
   font: 200 6vh "Vibur";
   color: #fee;
-  /* text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-    0 0 0.1em #ff4444, 0 10px 3px #000; */
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--color),
     0 0 0.5em var(--color), 0 0 0.1em var(--color), 0 10px 3px #000;
 }
@@ -151,10 +138,7 @@ label {
   animation: blink linear infinite 2s;
 }
 .logo b span:nth-of-type(2) {
-  animation: blink2 linear infinite 4s;
-}
-.logo b span:nth-of-type(3) {
-  animation: blink linear infinite 4s;
+  animation: blink linear infinite 3s;
 }
 @keyframes blink {
   78% {
