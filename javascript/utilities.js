@@ -27,15 +27,6 @@ $("#poly-sides")[0].oninput = function () {
 $("#text-size")[0].oninput = function () {
   canvasSettings.textSize = this.value;
 };
-
-$("#text-size")[0].oninput = function () {
-  canvasSettings.textsize = this.value;
-};
-
-// $("#text-size")[0].oninput = function () {
-//   canvasSettings.textsize = this.value;
-// };
-
 $("#clear-canvas").click(() => {
   contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
   contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
