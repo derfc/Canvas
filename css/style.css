@@ -3,7 +3,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-nav {
+/* nav {
   border-bottom: 3px solid white;
   height: 12vh;
   padding: 0px !important;
@@ -11,7 +11,7 @@ nav {
 
 .navbar-brand {
   padding-top: 0px !important;
-}
+} */
 
 .contain {
   display: flex;
@@ -37,7 +37,7 @@ nav {
 
 #canvas-container {
   height: 720px;
-  margin: 20px 0px 0px 40px;
+  margin: 20px 0px 0px 10px;
   padding: 0px;
   justify-content: start;
 }
@@ -50,7 +50,7 @@ nav {
   background-color: #302f51;
   justify-content: center;
   border-radius: 15px;
-  margin: 20px 20px 0px 20px;
+  margin: 15px 20px 0px 20px;
   padding: 15px 10px;
   box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
 }
@@ -63,8 +63,8 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  margin: 20px;
-  padding: 15px 10px;
+  margin: 15px 20px 0px 20px;
+  padding: 10px 10px;
   color: white;
   font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
@@ -77,6 +77,8 @@ nav {
   background-color: #512f50;
   border-radius: 15px;
   box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+  padding: 10px 10px;
+  margin: 10px 20px 0px 20px;
 }
 
 .buttonAll {
@@ -139,16 +141,15 @@ label {
 }
 .logo {
   text-align: center;
-  /* height: 250px; */
-  margin-left: 25px;
   user-select: none;
 }
 
 .logo b {
-  font: 150 6vh "Vibur";
+  font: 150 5vh "Vibur";
+  /* font: 150 5vh "Nixie One"; */
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--color),
-    0 0 0.5em var(--color), 0 0 0.1em var(--color), 0 10px 3px #000;
+    0 0 0.5em var(--color), 0 0 0.1em var(--color), 0 6px 3px #000;
 }
 .logo b span:nth-of-type(1) {
   animation: blink linear infinite 2s;

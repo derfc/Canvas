@@ -9,6 +9,7 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Vibur');
+@import url('https://fonts.googleapis.com/css?family=Nixie+One');
 </style>
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -169,6 +170,21 @@
           </div>
         </div>
         <div class="utility-button">
+        <!-- Color Selectors -->
+        <label for="strokecolor">Stroke Color: </label>
+        <input
+          type="color"
+          id="stroke-color"
+          name="strokecolor"
+          value="#ff4444"
+        />
+        <label for="fillcolor">Fill Color: </label>
+        <input
+          type="color"
+          id="fill-color"
+          name="fillcolor"
+          value="#00008B"
+        />
           <!-- Stroke Size -->
           <label for="stroke-size">Stroke Size</label>
           <select id="stroke-size">
@@ -192,21 +208,6 @@
           <!-- Polygon Sides -->
           <label for="poly-sides">Polygon Sides</label>
           <input type="number" id="poly-sides" name="Polygon Sides" min="1" max="999" value="5">
-          <!-- Color Selectors -->
-          <label for="strokecolor">Stroke Color: </label>
-          <input
-            type="color"
-            id="stroke-color"
-            name="strokecolor"
-            value="#ff4444"
-          />
-          <label for="fillcolor">Fill Color: </label>
-          <input
-            type="color"
-            id="fill-color"
-            name="fillcolor"
-            value="#00008B"
-          />
         </div>
       </div>
       <div class="container" id="canvas-container">
