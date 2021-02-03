@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Vibur');
+@import url('https://fonts.googleapis.com/css?family=Nixie+One');
+</style>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#">
+        <div class="logo">
+          <b>nostal<span>gi</span>c pain<span>t</span></b>
+        </div>
+      </a>
+    </nav> -->
+    <div class="contain">
+      <div class="buttonAll">
+        <div class="logo-div">
+          <div class="logo">
+            <b>nostal<span>gi</span>c pain<span>t</span></b>
+          </div>
+        </div>
+        <div class="mainbutton">
+          <!-- The drawing line button  -->
+          <div class="button" id="btn-drawing-line">
+            <img
+              class="img-fluid icons btn-active"
+              src="img/canvasicons-pencil.png"
+              alt="line"
+              id="drawing-line"
+            />
+          </div>
+          <!-- The Stright-Line button  -->
+          <div class="button" id="btn-strline">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-stright.png"
+              alt="strline"
+              id="strline"
+            />
+          </div>  
+          <!-- The drawing rectangle button  -->
+          <div class="button" id="btn-drawing-rectangle">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-rect.png"
+              alt="rectangle"
+              id="drawing-rectangle"
+            />
+          </div>  
+          <!-- The drawing circle button  -->
+          <div class="button" id="btn-drawing-circle">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-circle.png"
+              alt="cicle"
+              id="drawing-circle"
+            />
+          </div>
+          <!-- The drawing arc button  -->
+          <div class="button" id="btn-drawing-arc">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-arc.png"
+              alt="arc"
+              id="drawing-arc"
+            />
+          </div>
+          <!-- The drawing bezier curve button  -->
+          <div class="button" id="btn-drawing-bezier">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-bezier.png"
+              alt="bezier-curve"
+              id="drawing-bezier-curve"
+            />
+          </div>
+          <!-- The Polygon button  -->
+          <div class="button" id="btn-drawing-polygon">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-polygon.png"
+              alt="polygon"
+              id="drawing-polygon"
+            />
+          </div>
+          <!-- The Irregular Polygon button  -->
+          <div class="button" id="btn-drawing-irregular-polygon">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-irregular-polygon.png"
+              alt="polygon"
+              id="drawing-irregular-polygon"
+            />
+          </div>
+          <!-- The Brush button  -->
+          <div class="button" id="btn-drawing-brush">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-paintcan.png"
+              alt="strline"
+              id="drawing-brush"
+            />
+          </div> 
+          <!-- The draw-stamping button  -->
+          <div class="button" id="btn-stamping">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-stamp.png"
+              alt="stamping"
+              id="stamping"
+            />
+          </div>  
+          <!-- The Text button  -->
+          <div class="button" id="btn-text">
+            <img
+              class="img-fluid icons"
+              src="img/canvasicons-text.png"
+              alt="text"
+              id="text"
+            />
+          </div>
+          <!-- The download button -->
+          <div class="button" id="btn-download">
+            <img 
+            class="img-fluid" 
+            src="img/canvasicons-download.png"
+            alt="download"
+            id="download"
+            />
+          </div>     
+        <!-- The eraser button  -->
+        <div class="button" id="btn-eraser">
+          <img
+            class="img-fluid icons"
+            src="img/canvasicons-eraser.png"
+            alt="eraser"
+            id="eraser"
+          />
+        </div> 
+          <!-- UTILITIES -->
+          <!-- Clear All -->
+          <div class="button" id="btn-clear-canvas">
+            <img
+              class="img-fluid"
+              src="img/canvasicons-clear.png"
+              alt="clear-canvas"
+              id="clear-canvas"
+            />
+          </div>
+        </div>
+        <div class="utility-button">
+        <!-- Color Selectors -->
+        <label for="strokecolor">Stroke Color: </label>
+        <input
+          type="color"
+          id="stroke-color"
+          name="strokecolor"
+          value="#ff4444"
+        />
+        <label for="fillcolor">Fill Color: </label>
+        <input
+          type="color"
+          id="fill-color"
+          name="fillcolor"
+          value="#00008B"
+        />
+          <!-- Stroke Size -->
+          <label for="stroke-size">Stroke Size</label>
+          <select id="stroke-size">
+            <option value="1">XS</option>
+            <option value="3">S</option>
+            <option value="5" selected>M</option>
+            <option value="9">L</option>
+            <option value="15">XL</option>
+            <option value="25">XXL</option>
+          </select>
+          <!-- text Size -->
+          <label for="text-size">Text Size</label>
+          <select id="text-size">
+            <option value="9">XS</option>
+            <option value="18">S</option>
+            <option value="24" selected>M</option>
+            <option value="30">L</option>
+            <option value="48">XL</option>
+            <option value="64">XXL</option>>
+          </select>
+          <!-- Polygon Sides -->
+          <label for="poly-sides">Polygon Sides</label>
+          <input type="number" id="poly-sides" name="Polygon Sides" min="1" max="999" value="5">
+        </div>
+      </div>
+      <div class="container" id="canvas-container">
+        <canvas
+          id="canvas-real"
+          class="canvas"
+          width="950px"
+          height="520px"
+        ></canvas>
+        <canvas
+          id="canvas-draft"
+          class="canvas"
+          width="950px"
+          height="520px"
+        ></canvas>
+        <input id="textInput" name="inputField" value="" style="display: none"></input>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!-- Drawing functionality  -->
+  <script src="./javascript/canvas-common.js" type="text/javascript" async defer></script>
+  <!-- Canvas Utilities -->
+  <script src="./javascript/utilities.js" type="text/javascript" async defer></script>
+  <!-- Line -->
+  <script src="./javascript/drawing-line.js" type="text/javascript" async defer></script>
+  <!-- Stright-line -->
+  <script src="./javascript/str-line.js" type="text/javascript" async defer></script>
+  <!-- Rectangle -->
+  <script src="./javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
+  <!-- Polygon -->
+  <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
+  <!-- Irregular Polygon -->
+  <script src="./javascript/drawing-irregular-polygon.js" type="text/javascript" async defer></script>
+  <!-- Arc -->
+  <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
+  <!-- Bezier curve -->
+  <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+  <!-- Circle -->
+  <script src="./javascript/drawing-irregular-circle.js" type="text/javascript" async defer></script>
+    <!-- stamping function -->
+    <script
+    src="./javascript/drawing-stamping.js"
+    type="text/javascript"
+    async
+    defer
+  ></script>
+  <!-- Brush -->
+  <script src="./javascript/drawing-brush.js" type="text/javascript" async defer></script>
+  <!-- Input Text -->
+  <script src="./javascript/text.js" type="text/javascript" async defer></script>
+  <!-- Eraser -->
+  <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
+  <!-- Undo -->
+  <script src="./javascript/undo.js" type="text/javascript" async defer></script>
+  <script type="text/javascript">
+    $(() => {
+      currentFunction = new DrawingLine(contextReal);
+      $("#drawing-rectangle").click(() => {
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#drawing-line").click(() => {
+        currentFunction = new DrawingLine(contextReal);
+      });
+      $("#drawing-arc").click(() => {
+        currentFunction = new DrawingArc(contextReal, contextDraft);
+      });
+      $("#drawing-bezier-curve").click(() => {
+        currentFunction = new DrawingBezierCurve(contextReal, contextDraft);
+      });
+      $("#eraser").click(() => {
+        currentFunction = new Eraser(contextReal);
+      });
+      $("#drawing-circle").click(() => {
+        currentFunction = new DrawingIrregularCircle(contextReal, contextDraft);
+      });
+      $("#drawing-irregular-polygon").click(() => {
+        currentFunction = new DrawingIrregularPolygon(contextReal, contextDraft);
+      });
+      $("#drawing-polygon").click(() => {
+        currentFunction = new DrawingPolygon(contextReal, contextDraft);
+      });
+      $("#text").click(() => {
+        currentFunction = new DrawingText(contextReal, contextDraft);
+      });
+      $("#strline").click(() => {
+        currentFunction = new DrawingStriaghtLine(contextReal, contextDraft);
+      });
+      $('#drawing-brush').click(() => {
+        currentFunction = new DrawingBrush(contextReal);
+      });
+      $('#stamping').click(() => {
+        currentFunction = new DrawingStamping(contextReal);
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+body {
+  overflow: hidden;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* nav {
+  border-bottom: 3px solid white;
+  height: 12vh;
+  padding: 0px !important;
+}
+
+.navbar-brand {
+  padding-top: 0px !important;
+} */
+
+.contain {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px;
+  background-color: #f5f3de;
+}
+
+.canvas {
+  border: 1px #302f51 solid;
+  position: absolute;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 30%);
+}
+
+#canvas-real {
+  background-color: white;
+}
+
+#canvas-draft {
+  background-color: transparent;
+}
+
+#canvas-container {
+  height: 720px;
+  margin: 20px 0px 0px 10px;
+  padding: 0px;
+  justify-content: start;
+}
+
+.mainbutton {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 0.5em;
+  row-gap: 1em;
+  background-color: #302f51;
+  justify-content: center;
+  border-radius: 15px;
+  margin: 15px 20px 0px 20px;
+  padding: 15px 10px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+}
+
+.utility-button {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* row-gap: 1em; */
+  column-gap: 1em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 15px 20px 0px 20px;
+  padding: 10px 10px;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: #512f50;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+}
+
+.logo-div {
+  background-color: #512f50;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0px rgb(0 0 0 / 50%);
+  padding: 10px 10px;
+  margin: 10px 20px 0px 20px;
+}
+
+.buttonAll {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 300px;
+}
+
+.button {
+  box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 80%);
+}
+
+.mainbutton .icons {
+  /* #clear-canvas not included, intentional */
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
+#clear-canvas {
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
+#download {
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
+.btn-active {
+  border: 3px #7510f7 solid !important;
+}
+
+select {
+  width: 45px;
+}
+
+.utility-button input {
+  width: 45px;
+  height: 20px;
+}
+
+label {
+  margin: 8px 0px;
+}
+
+/* ANIMATED LOGO */
+:root {
+  --color: #ff4444;
+}
+.logo {
+  text-align: center;
+  user-select: none;
+}
+
+.logo b {
+  font: 150 5vh "Vibur";
+  /* font: 150 5vh "Nixie One"; */
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--color),
+    0 0 0.5em var(--color), 0 0 0.1em var(--color), 0 6px 3px #000;
+}
+.logo b span:nth-of-type(1) {
+  animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2) {
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% {
+    color: #333;
+  }
+  80% {
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+@keyframes blink2 {
+  50% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  54% {
+    color: black;
+    text-shadow: none;
+  }
+  56% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  58% {
+    color: black;
+    text-shadow: none;
+  }
+  96% {
+    color: black;
+    text-shadow: none;
+  }
+  98% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+/* Scrollbar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f3de;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
