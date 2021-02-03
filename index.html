@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Vibur');
 </style>
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -26,11 +27,13 @@
   <body>
     <nav class="navbar navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="#">
-        <img src="./img/icons-white/canvasicons-clear.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Not-Canvas
+        <!-- <img src="./img/canvasicons-clear1.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Not-Canvas -->
+        <div class="logo">
+          <b>nostal<span>gi</span>c pain<span>t</span></b>
+        </div>
       </a>
     </nav>
-    <!-- <h1>Canvas Application</h1> -->
     <div class="contain">
       <div class="buttonAll">
         <div class="mainbutton">
@@ -43,7 +46,7 @@
               id="drawing-line"
             />
           </div>
-          <!-- The str-line button  -->
+          <!-- The Stright-Line button  -->
           <div class="button" id="btn-strline">
             <img
               class="img-fluid icons"
@@ -110,14 +113,13 @@
           <div class="button" id="btn-drawing-irregular-polygon">
             <img
               class="img-fluid icons"
-              src="img/canvasicons-polygon.png"
+              src="img/canvasicons-irregular-polygon.png"
               alt="polygon"
               id="drawing-irregular-polygon"
             />
           </div>
           <!-- The Text button  -->
           <div class="button" id="btn-text">
-            <!-- <input type="range" min="10" max="99" value="49" step="1" id="text-size"> -->
             <img
               class="img-fluid icons"
               src="img/canvasicons-text.png"
@@ -125,13 +127,13 @@
               id="text"
             />
           </div>
-          <!-- The eraser button  -->
-          <div class="button" id="btn-eraser">
-            <img
-              class="img-fluid icons"
-              src="img/canvasicons-eraser.png"
-              alt="eraser"
-              id="eraser"
+          <!-- The download button -->
+          <div class="button" id="btn-download">
+            <img 
+            class="img-fluid" 
+            src="img/canvasicons-download.png"
+            alt="download"
+            id="download"
             />
           </div>     
           <!-- The draw-stamping button  -->
@@ -143,9 +145,18 @@
               id="stamping"
             />
           </div>  
+        </div>
+        <!-- The eraser button  -->
+        <div class="button" id="btn-eraser">
+          <img
+            class="img-fluid icons"
+            src="img/canvasicons-eraser.png"
+            alt="eraser"
+            id="eraser"
+          />
+        </div>   
           <!-- UTILITIES -->
           <!-- Clear All -->
-          <!-- <span class="btn btn-danger" id="clear-canvas">Clear Canvas</span> -->
           <div class="button" id="btn-clear-canvas">
             <img
               class="img-fluid"
@@ -169,32 +180,23 @@
           <!-- text Size -->
           <label for="text-size">Text Size</label>
           <select id="text-size">
-            <option value="10">10px</option>
-            <option value="18">18px</option>
-            <option value="24">24px</option>
-            <option value="30" selected>30px</option>
-            <option value="48">48px</option>
-            <option value="60">60px</option>>
-            <option value="72">72px</option>>
+            <option value="9">XS</option>
+            <option value="18">S</option>
+            <option value="24" selected>M</option>
+            <option value="30">L</option>
+            <option value="48">XL</option>
+            <option value="64">XXL</option>>
           </select>
-                    <!-- text Size -->
-                    <label for="poly-sides">Polygon Sides</label>
-                    <select id="poly-sides">
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6" selected>6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>>
-                      <option value="8">9</option>>
-                    </select>
+          <!-- Polygon Sides -->
+          <label for="poly-sides">Polygon Sides</label>
+          <input type="number" id="poly-sides" name="Polygon Sides" min="1" max="999" value="5">
           <!-- Color Selectors -->
           <label for="strokecolor">Stroke Color: </label>
           <input
             type="color"
             id="stroke-color"
             name="strokecolor"
-            value="#228c22"
+            value="#ff4444"
           />
           <label for="fillcolor">Fill Color: </label>
           <input
@@ -225,36 +227,26 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-  <!-- The drawing functionality  -->
+  <!-- Drawing functionality  -->
   <script src="./javascript/canvas-common.js" type="text/javascript" async defer></script>
   <!-- Canvas Utilities -->
   <script src="./javascript/utilities.js" type="text/javascript" async defer></script>
-  <!-- Canvas Undo -->
-  <script src="./javascript/undo.js" type="text/javascript" async defer></script>
-  <!-- The drawing line functionality  -->
+  <!-- Line -->
   <script src="./javascript/drawing-line.js" type="text/javascript" async defer></script>
-  <!-- The drawing rectangle functionality  -->
-  <script src="./javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
-  <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
-  <script src="./javascript/drawing-irregular-polygon.js" type="text/javascript" async defer></script>
-  <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
-  <!-- The drawing bezier curve functionality  -->
-  <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
-  <!-- The eraser functionality  -->
-  <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
-  <!-- The drawing circle functionality  -->
-  <script src="./javascript/drawing-irregular-circle.js" type="text/javascript" async defer></script>
-  <!-- str-line function -->
+  <!-- Stright-line -->
   <script src="./javascript/str-line.js" type="text/javascript" async defer></script>
-  <!-- text line function-->
-  <script src="./javascript/text.js" type="text/javascript" async defer></script>
-  <!-- Brush function -->
-  <script
-  src="./javascript/drawing-brush.js"
-  type="text/javascript"
-  async
-  defer
-></script>
+  <!-- Rectangle -->
+  <script src="./javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
+  <!-- Polygon -->
+  <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
+  <!-- Irregular Polygon -->
+  <script src="./javascript/drawing-irregular-polygon.js" type="text/javascript" async defer></script>
+  <!-- Arc -->
+  <script src="./javascript/drawing-arc.js" type="text/javascript" async defer></script>
+  <!-- Bezier curve -->
+  <script src="./javascript/drawing-bezier-curve.js" type="text/javascript" async defer></script>
+  <!-- Circle -->
+  <script src="./javascript/drawing-irregular-circle.js" type="text/javascript" async defer></script>
     <!-- stamping function -->
     <script
     src="./javascript/drawing-stamping.js"
@@ -262,6 +254,14 @@
     async
     defer
   ></script>
+  <!-- Brush -->
+  <script src="./javascript/drawing-brush.js" type="text/javascript" async defer></script>
+  <!-- Input Text -->
+  <script src="./javascript/text.js" type="text/javascript" async defer></script>
+  <!-- Eraser -->
+  <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
+  <!-- Undo -->
+  <script src="./javascript/undo.js" type="text/javascript" async defer></script>
   <script type="text/javascript">
     $(() => {
       currentFunction = new DrawingRectangle(contextReal, contextDraft);

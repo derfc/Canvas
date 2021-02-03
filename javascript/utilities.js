@@ -11,6 +11,7 @@ let canvasSettings = {
 
 $("#stroke-color")[0].oninput = function () {
   canvasSettings.colorStroke = this.value;
+  document.documentElement.style.setProperty("--color", this.value);
 };
 
 $("#fill-color")[0].oninput = function () {
@@ -24,15 +25,26 @@ $("#stroke-size")[0].oninput = function () {
 $("#poly-sides")[0].oninput = function () {
   canvasSettings.polygonSides = this.value;
 };
+
 $("#text-size")[0].oninput = function () {
   canvasSettings.textSize = this.value;
 };
+// Clear Canvas function
 $("#clear-canvas").click(() => {
   contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
   contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 });
-
-////////////DOM
+//Downloads Image
+$("#download").click((e) => {
+  let image = canvasReal.toDataURL();
+  let tempLink = document.createElement("a");
+  tempLink.download = "image.png";
+  tempLink.href = image;
+  document.body.appendChild(tempLink);
+  tempLink.click();
+  document.body.removeChild(tempLink);
+});
+//Highlight selected button function
 $(".icons").click(function (e) {
   $(".icons").removeClass("btn-active");
   $(this).addClass("btn-active");
