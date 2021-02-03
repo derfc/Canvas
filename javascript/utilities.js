@@ -5,8 +5,8 @@ let canvasSettings = {
   colorFill: $("#fill-color").val(),
   strokeSize: $("#stroke-size").val(),
   textSize: $("#text-size").val(),
-  // textSize
-  textsize: $("#text-size").val(),
+  polygonSides: $("#poly-sides").val(),
+  // downloadCanvas: $("#download").val(),
   // textFont
 };
 
@@ -21,13 +21,17 @@ $("#fill-color")[0].oninput = function () {
 $("#stroke-size")[0].oninput = function () {
   canvasSettings.strokeSize = this.value;
 };
+
+$("#poly-sides")[0].oninput = function () {
+  canvasSettings.polygonSides = this.value;
+};
 $("#text-size")[0].oninput = function () {
   canvasSettings.textSize = this.value;
 };
 
-$("#text-size")[0].oninput = function (){
+$("#text-size")[0].oninput = function () {
   canvasSettings.textsize = this.value;
-}
+};
 
 // $("#text-size")[0].oninput = function () {
 //   canvasSettings.textsize = this.value;
@@ -40,8 +44,6 @@ $("#clear-canvas").click(() => {
 
 ////////////DOM
 $(".icons").click(function (e) {
-  // console.log(e);
-  console.log(this);
   $(".icons").removeClass("btn-active");
   $(this).addClass("btn-active");
 });

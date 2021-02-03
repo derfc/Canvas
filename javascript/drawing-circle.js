@@ -6,14 +6,17 @@ class DrawingCircle extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    this.contextDraft.fillStyle = canvasSettings.colorFill;
+    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
   }
   //****** coord[0] and coord[1] is wherever the user is placing  the mouse position is ***** */
   // the draft is the preview of what the shape looks like.
   // the real is when the mouse is released and the final shape is committed to the canvas
   onMouseDown(coord, event) {
-    this.contextDraft.lineWidth = canvasSettings.strokeSize;
-    this.contextDraft.fillStyle = canvasSettings.colorFill;
-    this.contextDraft.strokeStyle = canvasSettings.colorStroke;
+    // this.contextDraft.lineWidth = canvasSettings.strokeSize;
+    // this.contextDraft.fillStyle = canvasSettings.colorFill;
+    // this.contextDraft.strokeStyle = canvasSettings.colorStroke;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -34,7 +37,6 @@ class DrawingCircle extends PaintFunction {
     this.contextDraft.arc(coord[0], coord[1], radius, 0, 2 * Math.PI, false);
     this.contextDraft.stroke();
     this.contextDraft.fill();
-
   }
 
   onMouseMove() {}
@@ -54,9 +56,7 @@ class DrawingCircle extends PaintFunction {
     this.contextReal.arc(coord[0], coord[1], radius, 0, 2 * Math.PI, false);
     this.contextReal.stroke();
     this.contextReal.fill();
-    
-
-  }
+i  }
   onMouseLeave() {}
   onMouseEnter() {}
 
