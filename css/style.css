@@ -5,7 +5,7 @@ body {
 
 nav {
   border-bottom: 3px solid white;
-  height: 11vh;
+  height: 12vh;
   padding: 0px !important;
 }
 
@@ -101,6 +101,14 @@ nav {
   border: 3px white solid;
 }
 
+#download {
+  width: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px white solid;
+}
+
 .btn-active {
   border: 3px #7510f7 solid !important;
 }
@@ -129,7 +137,7 @@ label {
 }
 
 .logo b {
-  font: 200 6vh "Vibur";
+  font: 150 6vh "Vibur";
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em var(--color),
     0 0 0.5em var(--color), 0 0 0.1em var(--color), 0 10px 3px #000;
