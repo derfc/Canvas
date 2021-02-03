@@ -18,6 +18,7 @@ class DrawingText extends PaintFunction {
           `${coord[0] - 83}` +
           "px)",
         padding: "0",
+        margin: "35px 85px",
       });
 
       this.origX = coord[0];
@@ -54,7 +55,7 @@ class DrawingText extends PaintFunction {
       textInput.value = "";
 
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextReal.fillText(textContent, this.origX, this.origY + 20);
+      this.contextReal.fillText(textContent, this.origX, this.origY);
       this.clickNumber = 0;
     }
   }
@@ -78,7 +79,7 @@ class DrawingText extends PaintFunction {
       textInput.value = "";
 
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextReal.fillText(textContent, this.origX, this.origY + 20);
+      this.contextReal.fillText(textContent, this.origX, this.origY);
       saveState();
       this.clickNumber = 0;
     }
