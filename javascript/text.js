@@ -50,6 +50,8 @@ class DrawingText extends PaintFunction {
       // this.contextReal.font = "30px italic bold ";
       this.contextReal.fillStyle = canvasSettings.colorFill;
       this.contextReal.font = `${canvasSettings.textSize}px italic bold`;
+
+      console.log(canvasSettings.textSize);
       let textContent = textInput.value;
       textInput.style["z-index"] = 6;
       textInput.value = "";
@@ -80,7 +82,6 @@ class DrawingText extends PaintFunction {
 
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.fillText(textContent, this.origX, this.origY);
-      saveState();
       this.clickNumber = 0;
     }
   }
@@ -88,17 +89,6 @@ class DrawingText extends PaintFunction {
   onMouseMove() {}
   onMouseLeave() {}
   onMouseEnter() {}
-  reset() {
-    this.clicclickNumberk = 0;
-    $("#textInput").css({
-      display: "none",
-      transform:
-        "translateY(" + this.origY + "px)translateX(" + this.origX + "px)",
-      padding: "0",
-    });
-    textInput.value = "";
-    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-  }
 }
 
 let test1 = { test: "test1" };
