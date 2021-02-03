@@ -11,6 +11,7 @@ let canvasSettings = {
 
 $("#stroke-color")[0].oninput = function () {
   canvasSettings.colorStroke = this.value;
+  document.documentElement.style.setProperty("--color", this.value);
 };
 
 $("#fill-color")[0].oninput = function () {
