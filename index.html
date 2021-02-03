@@ -168,6 +168,15 @@
               id="clear-canvas"
             />
           </div>
+          <!-- Fill -->
+          <div class="button" id="btn-fill">
+            <img
+              class="img-fluid"
+              src="#"
+              alt="fill"
+              id="fill"
+            />
+          </div>
         </div>
         <div class="utility-button">
         <!-- Color Selectors -->
@@ -263,6 +272,8 @@
   <script src="./javascript/text.js" type="text/javascript" async defer></script>
   <!-- Eraser -->
   <script src="./javascript/eraser.js" type="text/javascript" async defer></script>
+  <!-- Fill -->
+  <script src="./javascript/fill.js" type="text/javascript" async defer></script>
   <!-- Undo -->
   <script src="./javascript/undo.js" type="text/javascript" async defer></script>
   <script type="text/javascript">
@@ -303,6 +314,9 @@
       });
       $('#stamping').click(() => {
         currentFunction = new DrawingStamping(contextReal);
+      });
+      $('#fill').click(() => {
+        currentFunction = new Fill(contextReal);
       });
     });
   </script>
