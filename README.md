@@ -6,20 +6,20 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 
 - Control/Command: Fixed the starting as center of current drawing
 
-- Escape: Escape from current drawing, data WILL NOT save.
+- Escape: Escape from current drawing, data WILL NOT save
 
-- Shift: Draw a regular shape (eg. square).
+- Shift: Draw a regular shape (eg. square)
 
 - Alt/C: Fill the current drawing with color selected
 
-- Enter: Closing path when drawing irregular polygons.
+- Enter: Closing path when drawing irregular polygons
 
 ## Basic Function
 
 ### Spray Can
 
-- Paint the canvas with a rectangle processed by a radial-gradient method.
-- Color values are retrieved from the stroke colour selector.
+- Paint the canvas with a rectangle processed by a radial-gradient method
+- Color values are retrieved from the stroke colour selector
 
 ### Stamp
 
@@ -51,11 +51,11 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 
 ### Bezier Curve
 
-- Click and move to select starting point, and point, first control point and second control point.
+- Click and move to select starting point, and point, first control point and second control point
 
 ### Download
 
-- Save the current real-canvas as a png file.
+- Save the current real-canvas as a png file
 
 ### Polygon
 
@@ -69,7 +69,7 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 
 ### Pencil
 
-- Click and drag to draw line.
+- Click and drag to draw line
 
 ### Text
 
@@ -87,7 +87,7 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 
 ### Clear All
 
-- Clear all content of both draft and real canvas.
+- Clear all content of both draft and real canvas
 
 ### Undo/Redo
 
@@ -99,11 +99,11 @@ App navigation is a scrollable container separated into 2 groups, Main and Utili
 
 ### Main Group;
 
-- Function selector buttons.
+- Function selector buttons
 - Buttons get highlighted when clicked, indicating the current ‘Mode’ of the app.
-- Functions with no ‘Modes’, e.g. ‘Download’ and ‘Clear All’ only get highlighted briefly to provide visual feedback.
+- Functions with no ‘Modes’, e.g. ‘Download’ and ‘Clear All’ only get highlighted briefly to provide visual feedback
 
 ### Utility Group:
 
-- Modifiers to change parameter of selected functions, such as colour selectors and stroke size selector.
-- Selectors will display currently selected color/size to provide visual feedback.
+- Modifiers to change parameter of selected functions, such as colour selectors and stroke size selector
+- Selectors will display currently selected color/size to provide visual feedback
