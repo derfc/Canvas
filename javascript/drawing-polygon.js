@@ -1,9 +1,4 @@
-/**********************************************
- * Drawing Line Functionality
- * ==================================
- ***********************************************/
 class DrawingPolygon extends PaintFunction {
-	// This class extends the PaintFunction class
 	constructor(contextReal, contextDraft) {
 		super();
 		this.contextReal = contextReal;
@@ -11,7 +6,6 @@ class DrawingPolygon extends PaintFunction {
 		this.sides = 5;
 	}
 
-	// On mouse down, ensure that the pen has these features
 	onMouseDown(coord, event) {
 		this.contextDraft.lineWidth = canvasSettings.strokeSize;
 		this.contextDraft.fillStyle = canvasSettings.colorFill;
@@ -31,13 +25,6 @@ class DrawingPolygon extends PaintFunction {
 		function arcctg(x) {
 			return Math.PI / 2 - Math.atan(x);
 		}
-		// let theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
-
-		// if (coord[1] - this.origY == 0 && coord[0] - this.origX > 0) {
-		// 	this.theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
-		// } else if (coord[1] - this.origY == 0 && coord[0] - this.origX < 0) {
-		// 	this.theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
-		// } else
 
 		if (coord[1] - this.origY >= 0) {
 			this.theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
@@ -45,17 +32,10 @@ class DrawingPolygon extends PaintFunction {
 			this.theta =
 				Math.PI + arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
 		}
-		// this.size = (coord[0] - this.origX) / Math.sin(theta);
 
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-
 		this.contextDraft.beginPath();
-		this.contextDraft.moveTo(
-			// this.origX + this.size * Math.cos(0),
-			// this.origY + this.size * Math.sin(0)
-			coord[0],
-			coord[1]
-		);
+		this.contextDraft.moveTo(coord[0], coord[1]);
 		for (let i = 1; i <= this.sides; i++) {
 			this.contextDraft.lineTo(
 				this.origX +
@@ -64,7 +44,6 @@ class DrawingPolygon extends PaintFunction {
 					this.size * Math.sin(this.theta + (i * 2 * Math.PI) / this.sides)
 			);
 		}
-		// console.log("origional", this.origX, this.origY);
 		if (fillStyle) {
 			this.contextDraft.fill();
 		} else {
@@ -80,24 +59,16 @@ class DrawingPolygon extends PaintFunction {
 		function arcctg(x) {
 			return Math.PI / 2 - Math.atan(x);
 		}
-		// let theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
 		if (coord[1] - this.origY >= 0) {
 			this.theta = arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
 		} else {
 			this.theta =
 				Math.PI + arcctg((coord[0] - this.origX) / (coord[1] - this.origY));
 		}
-		// this.size = (coord[0] - this.origX) / Math.sin(theta);
 
 		this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-
 		this.contextReal.beginPath();
-		this.contextReal.moveTo(
-			// this.origX + this.size * Math.cos(0),
-			// this.origY + this.size * Math.sin(0)
-			coord[0],
-			coord[1]
-		);
+		this.contextReal.moveTo(coord[0], coord[1]);
 		for (let i = 1; i <= this.sides; i++) {
 			this.contextReal.lineTo(
 				this.origX +
@@ -106,7 +77,6 @@ class DrawingPolygon extends PaintFunction {
 					this.size * Math.sin(this.theta + (i * 2 * Math.PI) / this.sides)
 			);
 		}
-		// console.log("origional", this.origX, this.origY);
 
 		if (fillStyle) {
 			this.contextReal.fill();

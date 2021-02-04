@@ -1,8 +1,3 @@
-/**********************************************
- * Drawing Rectangle Functionality
- * ==================================
- ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
 class DrawingRectangle extends PaintFunction {
 	constructor(contextReal, contextDraft) {
 		super();
@@ -135,7 +130,6 @@ class DrawingRectangle extends PaintFunction {
 				);
 				this.contextDraft.stroke();
 			}
-			console.log("NRF", regularFix);
 		}
 	}
 
@@ -259,7 +253,6 @@ class DrawingRectangle extends PaintFunction {
 				this.contextReal.stroke();
 			}
 			saveState();
-			// console.log("NRF", regularFix);
 		}
 	}
 	onMouseLeave() {}
