@@ -131,6 +131,7 @@
             data-toggle="tooltip" data-placement="top" title="Download Canvas"
             />
           </div>  
+         
           <!-- The Polygon button  -->
           <div class="button" id="btn-drawing-polygon">
             <img
@@ -234,6 +235,17 @@
           <input type="number" id="poly-sides" name="Polygon Sides" min="1" max="999" value="5">
         </div>
       </div>
+       <!-- The Upload button -->
+       <div class="button" id="btn-upload">
+        <img 
+        class="img-fluid icons-exception" 
+        src="img/canvasicons-upload"
+        alt="upload"
+        id="imageLoader"
+        data-toggle="tooltip" data-placement="top" title="Upload Canvas"
+        />
+        <input type="file" id="upload" name="imageLoader"/>
+      </div>  
       <div class="container" id="canvas-container">
         <canvas
           id="canvas-real"
@@ -293,6 +305,7 @@
   <script src="./javascript/fill.js" type="text/javascript" async defer></script>
   <!-- Undo -->
   <script src="./javascript/undo.js" type="text/javascript" async defer></script>
+  <!-- <script src="./javascript/upload.js" type="text/javascript" async defer></script> -->
   <script type="text/javascript">
     $(() => {
       currentFunction = new DrawingLine(contextReal);
