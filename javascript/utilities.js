@@ -6,7 +6,6 @@ let canvasSettings = {
   strokeSize: $("#stroke-size").val(),
   textSize: $("#text-size").val(),
   polygonSides: $("#poly-sides").val(),
-  // textFont
 };
 
 $("#stroke-color")[0].oninput = function () {
@@ -46,22 +45,24 @@ $("#download").click((e) => {
   document.body.removeChild(tempLink);
 });
 
+//Uploads Image
 $("#upload").change((e) => {
   console.log(contextReal.canvas.width, canvasReal.width);
   var reader = new FileReader();
-    reader.onload = function(event){
-        var img = new Image();
-        img.onload = function(){
-            // contextReal.width = img.width;
-            // img.width = contextReal.canvas.width;
-            // contextReal.height = img.height;
-            // img.height = contextReal.canvas.height;
-            contextReal.drawImage(img,0,0,contextReal.canvas.width, contextReal.canvas.height);
-        }
-        img.src = event.target.result;
-      }
-        reader.readAsDataURL(e.target.files[0]); 
-  
+  reader.onload = function (event) {
+    var img = new Image();
+    img.onload = function () {
+      contextReal.drawImage(
+        img,
+        0,
+        0,
+        contextReal.canvas.width,
+        contextReal.canvas.height
+      );
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(e.target.files[0]);
 });
 //Highlight selected button/ DOM
 $(".icons").click(function (e) {
