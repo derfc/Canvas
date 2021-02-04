@@ -161,6 +161,36 @@
             data-toggle="tooltip" data-placement="top" title="Download Canvas"
             />
           </div> 
+        <!-- The Upload button -->
+        <div class="button" id="btn-upload">
+          <img 
+          class="img-fluid icons-exception" 
+          src="img/canvasicons-upload.png"
+          alt="upload"
+          id="imageLoader"
+          data-toggle="tooltip" data-placement="top" title="Upload Image"
+          />
+        </div> 
+        <!-- The Undo -->
+        <div class="button" id="btn-undo">
+          <img 
+          class="img-fluid icons-exception" 
+          src="img/canvasicons-undo.png"
+          alt="upload"
+          id="undo"
+          data-toggle="tooltip" data-placement="top" title="Undo"
+          />
+        </div> 
+        <!-- The Redo button -->
+        <div class="button" id="btn-redo">
+          <img 
+          class="img-fluid icons-exception" 
+          src="img/canvasicons-redo.png"
+          alt="upload"
+          id="redo"
+          data-toggle="tooltip" data-placement="top" title="Redo"
+          />
+        </div> 
           <!-- Fill -->
           <div class="button" id="btn-fill">
             <img
@@ -232,19 +262,9 @@
           <!-- Polygon Sides -->
           <label for="poly-sides">Polygon Sides</label>
           <input type="number" id="poly-sides" name="Polygon Sides" min="1" max="999" value="5">
+        <input type="file" id="upload" name="imageLoader"style="display: none" size="10"/> 
         </div>
       </div>
-       <!-- The Upload button -->
-       <div class="button" id="btn-upload">
-        <img 
-        class="img-fluid icons-exception" 
-        src="img/canvasicons-upload"
-        alt="upload"
-        id="imageLoader"
-        data-toggle="tooltip" data-placement="top" title="Upload Canvas"
-        />
-        <input type="file" id="upload" name="imageLoader"/>
-      </div>  
       <div class="container" id="canvas-container">
         <canvas
           id="canvas-real"

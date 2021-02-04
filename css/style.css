@@ -113,6 +113,10 @@ select {
   height: 20px;
 }
 
+/* input[type="file"] {
+  : 1px;
+} */
+
 label {
   margin: 8px 0px;
 }

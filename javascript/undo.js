@@ -7,39 +7,39 @@ var state = contextReal.getImageData(0, 0, canvasReal.width, canvasReal.height);
 window.addEventListener("popstate", changeStep, false);
 
 function saveState() {
-	let state = contextReal.getImageData(
-		0,
-		0,
-		canvasReal.width,
-		canvasReal.height
-	);
-	window.history.pushState(state, null);
+  let state = contextReal.getImageData(
+    0,
+    0,
+    canvasReal.width,
+    canvasReal.height
+  );
+  window.history.pushState(state, null);
 }
 
 function changeStep(e) {
-	contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
-	if (e.state) {
-		contextReal.putImageData(e.state, 0, 0);
-	}
+  contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
+  if (e.state) {
+    contextReal.putImageData(e.state, 0, 0);
+  }
 }
 
-// undo.addEventListener(
-// 	"click",
-// 	function () {
-// 		window.history.go(-1);
-// 		// console.log("hello");
-// 	},
-// 	false
-// );
+undo.addEventListener(
+  "click",
+  function () {
+    window.history.go(-1);
+    // console.log("hello");
+  },
+  false
+);
 
-// redo.addEventListener(
-// 	"click",
-// 	function () {
-// 		window.history.go(1);
-// 		// console.log("hello");
-// 	},
-// 	false
-// );
+redo.addEventListener(
+  "click",
+  function () {
+    window.history.go(1);
+    // console.log("hello");
+  },
+  false
+);
 
 // below didnt check
 //error occur
