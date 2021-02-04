@@ -84,7 +84,7 @@ body {
 }
 
 .mainbutton .icons {
-  /* #clear-canvas not included, intentional */
+  /* #clear-canvas/#download/#Bucket not included, intentional */
   width: 45px;
   cursor: pointer;
   border-radius: 5px;
@@ -92,15 +92,7 @@ body {
   border: 3px white solid;
 }
 
-#clear-canvas {
-  width: 45px;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: white;
-  border: 3px white solid;
-}
-
-#download {
+.icons-exception {
   width: 45px;
   cursor: pointer;
   border-radius: 5px;
@@ -109,7 +101,7 @@ body {
 }
 
 .btn-active {
-  border: 3px #7510f7 solid !important;
+  border: 4px #7510f7 solid !important;
 }
 
 select {
@@ -175,33 +167,6 @@ label {
     text-shadow: none;
   }
   92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-}
-
-@keyframes blink2 {
-  50% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  54% {
-    color: black;
-    text-shadow: none;
-  }
-  56% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  58% {
-    color: black;
-    text-shadow: none;
-  }
-  96% {
-    color: black;
-    text-shadow: none;
-  }
-  98% {
     color: inherit;
     text-shadow: inherit;
   }

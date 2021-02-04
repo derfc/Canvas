@@ -44,8 +44,15 @@ $("#download").click((e) => {
   tempLink.click();
   document.body.removeChild(tempLink);
 });
-//Highlight selected button function
+//Highlight selected button/ DOM
 $(".icons").click(function (e) {
   $(".icons").removeClass("btn-active");
   $(this).addClass("btn-active");
+});
+
+$(".icons-exception").click(function (e) {
+  $(this).addClass("btn-active");
+  setTimeout(() => {
+    $(this).removeClass("btn-active");
+  }, 120);
 });
