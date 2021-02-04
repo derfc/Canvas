@@ -45,6 +45,24 @@ $("#download").click((e) => {
   tempLink.click();
   document.body.removeChild(tempLink);
 });
+
+$("#upload").change((e) => {
+  console.log(contextReal.canvas.width, canvasReal.width);
+  var reader = new FileReader();
+    reader.onload = function(event){
+        var img = new Image();
+        img.onload = function(){
+            // contextReal.width = img.width;
+            // img.width = contextReal.canvas.width;
+            // contextReal.height = img.height;
+            // img.height = contextReal.canvas.height;
+            contextReal.drawImage(img,0,0,contextReal.canvas.width, contextReal.canvas.height);
+        }
+        img.src = event.target.result;
+      }
+        reader.readAsDataURL(e.target.files[0]); 
+  
+});
 //Highlight selected button/ DOM
 $(".icons").click(function (e) {
   $(".icons").removeClass("btn-active");
