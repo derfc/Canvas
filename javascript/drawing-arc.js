@@ -1,9 +1,4 @@
-/**********************************************
- * Drawing Line Functionality
- * ==================================
- ***********************************************/
 class DrawingArc extends PaintFunction {
-	// This class extends the PaintFunction class
 	constructor(contextReal, contextDraft) {
 		super();
 		this.contextReal = contextReal;
@@ -11,7 +6,6 @@ class DrawingArc extends PaintFunction {
 		this.click = 0;
 	}
 
-	// On mouse down, ensure that the pen has these features
 	onMouseDown(coord, event) {
 		this.contextDraft.lineWidth = canvasSettings.strokeSize;
 		this.contextDraft.strokeStyle = canvasSettings.colorStroke;
@@ -24,7 +18,6 @@ class DrawingArc extends PaintFunction {
 		if (this.click === 1) {
 			var cpx0 = coord[0];
 			var cpy0 = coord[1];
-			// console.log("mooving coor", cpx0, cpy0);
 			this.contextDraft.beginPath();
 			this.contextDraft.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
@@ -33,7 +26,6 @@ class DrawingArc extends PaintFunction {
 		} else if (this.click === 2) {
 			var cpx0 = coord[0];
 			var cpy0 = coord[1];
-			// console.log("mooving coor", cpx0, cpy0);
 			this.contextDraft.beginPath();
 			this.contextDraft.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
@@ -47,50 +39,27 @@ class DrawingArc extends PaintFunction {
 			this.origY = coord[1];
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			this.click++;
-			console.log("click number", this.click, "origional", [
-				this.origX,
-				this.origY,
-			]);
 		} else if (this.click === 1) {
 			var cpx0 = coord[0];
 			var cpy0 = coord[1];
 			this.endx0 = coord[0];
 			this.endy0 = coord[1];
-			// console.log("mooving coor", cpx0, cpy0);
 			this.contextDraft.beginPath();
 			this.contextDraft.moveTo(this.origX, this.origY);
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
 			this.contextDraft.quadraticCurveTo(cpx0, cpy0, this.endx0, this.endy0);
 			this.contextDraft.stroke();
 			this.click++;
-			console.log(
-				"click number",
-				this.click,
-				"ctrl pt1",
-				[cpx0, cpy0],
-				"end pt",
-				[this.endx0, this.endy0]
-			);
 		} else if (this.click === 2) {
 			var cpx0 = coord[0];
 			var cpy0 = coord[1];
 			this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-
 			this.contextReal.beginPath();
 			this.contextReal.moveTo(this.origX, this.origY);
 			this.contextReal.quadraticCurveTo(cpx0, cpy0, this.endx0, this.endy0);
 			this.contextReal.stroke();
 			saveState();
-			console.log(
-				"click number",
-				this.click,
-				"ctrl pt2",
-				[cpx0, cpy0],
-				"end pt2",
-				[this.endx0, this.endy0]
-			);
 			this.click = 0;
-			console.log("end of stroy", this.click);
 		}
 	}
 	onMouseLeave() {}

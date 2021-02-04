@@ -3,7 +3,6 @@ var redo = document.querySelector("#redo");
 var save = document.querySelector("#save");
 var load = document.querySelector("#load");
 var state = contextReal.getImageData(0, 0, canvasReal.width, canvasReal.height);
-// window.history.pushState(state, null);
 
 window.addEventListener("popstate", changeStep, false);
 

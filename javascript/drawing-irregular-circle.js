@@ -206,11 +206,9 @@ class DrawingIrregularCircle extends PaintFunction {
 	onMouseEnter() {}
 
 	draw(x, y) {
-		//
 		this.context.lineTo(x, y);
 		this.context.moveTo(x, y);
 		this.context.closePath();
-		// Draw the line onto the page
 		this.context.stroke();
 	}
 }
