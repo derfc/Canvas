@@ -90,6 +90,7 @@ class DrawingText extends PaintFunction {
   onMouseMove() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  join() {}
   reset() {
     $("#textInput").css({
       display: "none",
