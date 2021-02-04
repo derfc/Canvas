@@ -19,7 +19,7 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 ### Spray Can
 
 - Paint the canvas with a rectangle processed by a radial-gradient method
-- Color values are retrieved from the stroke colour selector
+- Color values are retrieved from the stroke color selector
 
 ### Stamp
 
@@ -105,5 +105,5 @@ App navigation is a scrollable container separated into 2 groups, Main and Utili
 
 ### Utility Group:
 
-- Modifiers to change parameter of selected functions, such as colour selectors and stroke size selector
+- Modifiers to change parameter of selected functions, such as color selectors and stroke size selector
 - Selectors will display currently selected color/size to provide visual feedback
