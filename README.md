@@ -67,6 +67,10 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 - Click and move to select starting point and the next point, press enter to close path
 - Color Fill available
 
+### Pencil
+
+- Click and drag to draw line.
+
 ### Text
 
 - Mouse click for textbox display

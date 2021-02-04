@@ -12,6 +12,7 @@ let dragging = false;
 let regularFix = false;
 let centerFix = false;
 let fillStyle = false;
+let resetDrawing = false;
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
@@ -56,21 +57,18 @@ $("#canvas-draft").mouseenter(function (e) {
 });
 
 window.addEventListener("keydown", (e) => {
-  console.log(e.key);
   if (e.key == "Escape") {
+    resetDrawing = true;
     currentFunction.reset();
   }
   if (e.key == "Shift") {
     regularFix = true;
-    console.log("regular fix", regularFix);
   }
   if (e.key == "Meta" || e.key == "Control") {
     centerFix = true;
-    console.log("center fix", centerFix);
   }
   if (e.key == "Alt" || e.key == "c") {
     fillStyle = true;
-    console.log("fill style", fillStyle);
   }
 
   if (e.key == "Enter") {
@@ -79,35 +77,17 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keyup", (e) => {
-  console.log(e.key);
   if (e.key == "Shift") {
     regularFix = false;
-    console.log("regular fix", regularFix);
   }
   if (e.key == "Meta" || e.key == "Control") {
     centerFix = false;
-    console.log("center fix", centerFix);
   }
   if (e.key == "Alt" || e.key == "c") {
     fillStyle = false;
-    console.log("fill style", fillStyle);
   }
 });
 
-// window.addEventListener("keypress", (e) => {
-//   console.log(e.key);
-//   if (e.key == "Escape") {
-//     // contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-//     currentFunction.reset();
-//   }
-// });
-
-// $(".ch-color").click((e) => {
-//   console.log(e.target.id);
-//   var colorStroke = e.target.id;
-// });
-/** # Class (all classes will have these methods) #
-/*  ====================== */
 class PaintFunction {
   constructor() {}
   onMouseDown() {}
@@ -120,7 +100,6 @@ class PaintFunction {
   color() {}
 }
 
-//Tooltip init
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
