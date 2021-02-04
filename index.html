@@ -164,7 +164,7 @@
           <!-- Fill -->
           <div class="button" id="btn-fill">
             <img
-              class="img-fluid icons-exception"
+              class="img-fluid icons"
               src="img/canvasicons-bucket.png"
               alt="fill"
               id="fill"
@@ -295,6 +295,7 @@
   <script src="./javascript/undo.js" type="text/javascript" async defer></script>
   <script type="text/javascript">
     $(() => {
+      saveState()
       currentFunction = new DrawingLine(contextReal);
       $("#drawing-rectangle").click(() => {
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
