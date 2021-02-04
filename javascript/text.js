@@ -83,12 +83,25 @@ class DrawingText extends PaintFunction {
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.fillText(textContent, this.origX, this.origY);
       this.clickNumber = 0;
+      saveState();
     }
   }
   onMouseDown() {}
   onMouseMove() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  join() {}
+  reset() {
+    $("#textInput").css({
+      display: "none",
+      transform:
+        "translateY(" + this.origY + "px)translateX(" + this.origX + "px)",
+      padding: "0",
+    });
+    textInput.value = "";
+    this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    this.clickNumber = 0;
+  }
 }
 
 let test1 = { test: "test1" };
