@@ -2,6 +2,21 @@
 
 Due to massive calculations, we don't recommend using Fill Bucket in large area.
 
+## UI
+
+App navigation is a scrollable container separated into 2 groups, Main and Utility.
+
+### Main Group;
+
+- Function selector buttons
+- Buttons get highlighted when clicked, indicating the current ‘Mode’ of the app.
+- Functions with no ‘Modes’, e.g. ‘Download’ and ‘Clear All’ only get highlighted briefly to provide visual feedback
+
+### Utility Group:
+
+- Modifiers to change parameter of selected functions, such as color selectors and stroke size selector
+- Selectors will display currently selected color/size to provide visual feedback
+
 ## Shapes Modifiers:
 
 - Control/Command: Fixed the starting as center of current drawing
@@ -92,18 +107,3 @@ Due to massive calculations, we don't recommend using Fill Bucket in large area.
 ### Undo/Redo
 
 - Click to undo or redo
-
-## UI
-
-App navigation is a scrollable container separated into 2 groups, Main and Utility.
-
-### Main Group;
-
-- Function selector buttons
-- Buttons get highlighted when clicked, indicating the current ‘Mode’ of the app.
-- Functions with no ‘Modes’, e.g. ‘Download’ and ‘Clear All’ only get highlighted briefly to provide visual feedback
-
-### Utility Group:
-
-- Modifiers to change parameter of selected functions, such as color selectors and stroke size selector
-- Selectors will display currently selected color/size to provide visual feedback
