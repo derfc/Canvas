@@ -9,7 +9,7 @@ body {
   padding: 0px;
   /* background-color: #f5f3de; */
   background: url(https://cdn.discordapp.com/attachments/648025313833517087/807064675157016576/wp4465114.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
